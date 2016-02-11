@@ -15,3 +15,8 @@ git rm "nombre del archivo"
 
 ###crear registros de cambios en el repositorio
 git commit -m "comentario del cambio"
+
+###sincronizar por primera vez a un repositorio de github
+
+git remote add origin https://github.com/bitia/tutorias.git
+git push -u origin master
