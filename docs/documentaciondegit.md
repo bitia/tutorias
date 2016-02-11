@@ -20,3 +20,6 @@ git commit -m "comentario del cambio"
 
 git remote add origin https://github.com/bitia/tutorias.git
 git push -u origin master
+
+###guardaar cambios en github
+git push

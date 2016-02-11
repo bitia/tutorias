@@ -19,6 +19,10 @@ from home import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='home')
+    url(r'^$', views.home, name='home'),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^registro/$', views.registro, name='registro'),
+    url(r'^recovery_passwd/$', views.recovery_passwd, name='recovery_passwd'),
+    url(r'^alumno/perfil$', views.perfil, name='perfil'),
     
 ]
