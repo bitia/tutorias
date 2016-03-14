@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from home import views
+import anexo13
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +25,7 @@ urlpatterns = [
     url(r'^registro/$', views.registro, name='registro'),
     url(r'^recovery_passwd/$', views.recovery_passwd, name='recovery_passwd'),
     url(r'^alumno/perfil$', views.perfil, name='perfil'),
+    url(r'^anexo13/', include('anexo13.urls')),
+
     
 ]

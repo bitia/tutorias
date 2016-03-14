@@ -10,7 +10,8 @@ def login(request):
 
 def registro(request):
 	f_datos_personales= DatosPersonalesForm()
-	return render(request,"registro.html",{"nombre":"bitia","Form":f_datos_personales})
+	f_datos_generales=DatosGeneralesForm()
+	return render(request,"registro.html",{"nombre":"bitia","Form":f_datos_personales,"Form1":f_datos_generales})
 
 def recovery_passwd(request):
 	return render(request,"recovery_passwd.html",{"nombre":"bitia"})

@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Tutorias{% endblock title %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/vendor/foundation.css"%}" />
+    {% block mascss %}
+      
+    {% endblock mascss %}
+  </head>
+  <body>
+
+    {% block contenido %}
+      
+    {% endblock contenido %}
+
+    <script src="{% static "js/vendor/jquery.min.js"%}"></script>
+    <script src="{% static "js/vendor/what-input.min.js"%}"></script>
+    <script src="{% static "js/vendor/foundation.min.js"%}"></script>
+    {% block masjs %}
+      
+    {% endblock masjs %}
+    <script>
+      $(document).foundation();
+    </script>
+    {% block scriptjs %}
+      
+    {% endblock scriptjs %}
+
+
+  </body>
+</html>

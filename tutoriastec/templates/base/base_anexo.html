@@ -1,0 +1,33 @@
+{% extends "base/basefn.html" %}
+{% load staticfiles %}
+{% block mascss %}
+    <link rel="stylesheet" href="{% static "owl-carousel/owl.carousel.css" %}">
+    <link rel="stylesheet" href="{% static "owl-carousel/owl.theme.css" %}">
+    <link rel="stylesheet" href="{% static "owl-carousel/owl.transitions.css" %}">
+{% endblock mascss %}
+{% block masjs %}
+    <script src="{% static "owl-carousel/owl.carousel.min.js" %}"></script>
+{% endblock masjs %}
+{% block scriptjs %}
+    <script type="text/javascript">
+    $("#owl-form").owlCarousel({
+ 
+      navigation:false, 
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      navigationText : ["Anterior", "Siguiente"],
+      mouseDrag : false,
+      touchDrag : false,
+      autoHeight : true,
+      transitionStyle:"backSlide"
+      });
+      var owl = $("#owl-form");
+      $(".next").click(function(){
+        owl.trigger('owl.next');
+      });
+      $(".prev").click(function(){
+        owl.trigger('owl.prev');
+      });
+    </script>
+{% endblock scriptjs %}

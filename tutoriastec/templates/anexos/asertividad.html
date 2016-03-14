@@ -1,0 +1,57 @@
+{% extends "base/base_anexo.html" %}
+
+{% block contenido %}
+<section id="main-header" class="row">
+        <header class="medium-6 medium-centered columns text-center">
+            <div class="callout">
+                <h1>Hello, {{user.username}}! </h1>
+                <h2>Test Asertividad</h2>
+            </div>
+        </header>
+    </section>
+<section class="row">
+        <div class="medium-6 medium-centered columns" >
+            <form action="./hola" method="post">{% csrf_token %}
+                <h3>Bienvenido al formulario</h3>
+                <div id="owl-form" class="owl-carousel owl-theme" >
+                   
+                   {% for field in form %}
+                        <div class="item">
+                            <div class="callout">
+                            <label>{{ field.label_tag }}
+                            {{ field }}
+                                
+                            </label>
+                             <span class="error">{{ field.errors }}</span>
+                
+                            {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                             <div class="row">
+                        <div class="small-6 columns">
+                            <a class=" button round alert expanded prev">Anterior</a>
+                        </div>
+                        <div class="small-6 columns">
+                            <a class="hollow button round success expanded next">Siguiente</a>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                  <div class="item">
+                      <div class="callout" data-equalizer-watch>
+                          <h3>Gracias por Contestar todas las preguntas</h3>
+                          <p>Ya solo falta enviar la información, pulsa el boton enviar</p>
+                          <p class="text-center">
+                          <a class="hollow button secondary prev">Regresar</a>
+                          <input type="submit" class="hollow button" value="enviar datos">
+                          </p>
+                      </div>
+                  </div>
+                </div> <!-- END owldemo-->               
+            </form>
+        </div>
+    </section>
+{% endblock contenido %}
+

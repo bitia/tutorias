@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 class DatosPersonales(models.Model):
 	carrera = models.CharField(max_length=30)
-	numero_control = models.IntegerField()
+	numero_control= models.CharField(max_length=50)
 	semestre = models.IntegerField()
 	fecha = models.DateField()
 	
@@ -23,10 +23,12 @@ class DatosGenerales(models.Model):
 	estado_civil_opc=(
 		('soltero',"Soltero"),
 		('casado',"Casado"),
+		('otro',"Otro")
 		)
 	estado_civil=models.CharField(choices=estado_civil_opc,
 			default='soltero', max_length=50)
 
+	numero_hijos = models.IntegerField(null=True,blank=True)
 	domicilio_actual = models.CharField(max_length=50,default="") 
 
 	escolaridad_opc=(
@@ -53,6 +55,8 @@ class DatosGenerales(models.Model):
 	becado_lugar=models.CharField(choices=becado_lugar_opc,
 			default='federal', max_length=50,blank=True)
 
+	becado_institucion = models.CharField(max_length=50,default="")
+
 	conquien_vives_opc= (
 		('familia',"Familia"),
 		('faminia_cercana',"Familia Cercana"),
@@ -72,10 +76,46 @@ class DatosGenerales(models.Model):
 	trabajas_donde = models.CharField(max_length=50,default="")
 	trabajas_horario_inicio = models.TimeField(null=True)
 	trabajas_horario_salida = models.TimeField(null=True)
-#	escolaridad_padre
-#	escolaridad_madre
-#	padre_vive
-#	madre_vive
+
+	escolaridad_padre_opc = (
+		('primaria',"Primaria"),
+		('secundaria',"Secundaria"),
+		('preparatoria',"Preparatoria"),
+		('tecnico',"Tecnico"),
+		('lic',"Lic"),
+		('posgrado ',"Posgrado"),
+		('sinestudio',"Sin estudio")
+		)
+	escolaridad_padre=models.CharField(choices=escolaridad_padre_opc,
+			default='sinestudio', max_length=50)
+
+
+	escolaridad_madre_opc = (
+		('primaria',"Primaria"),
+		('secundaria',"Secundaria"),
+		('preparatoria',"Preparatoria"),
+		('tecnico',"Tecnico"),
+		('lic',"Lic"),
+		('posgrado ',"Posgrado"),
+		('sinestudio',"Sin estudio")
+		)
+	escolaridad_madre=models.CharField(choices=escolaridad_madre_opc,
+			default='sinestudio', max_length=50)
+
+	padre_vive_opc=(
+		('si',"Vive"),
+		('no',"Finado"),
+		)
+	padre_vive=models.CharField(choices=padre_vive_opc,
+			default='si', max_length=50)
+
+	madre_vive_opc=(
+		('si',"Vive"),
+		('no',"Finado"),
+		)
+	madre_vive=models.CharField(choices=madre_vive_opc,
+			default='si', max_length=50)
+
 	nom_trabajo_padre = models.CharField(max_length=50,default="")
 	nom_trabajo_madre = models.CharField(max_length=50,default="")
 
