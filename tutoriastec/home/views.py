@@ -3,10 +3,10 @@ from anexo6.forms import ContactosEmergenciaForm, DatosGeneralesForm, DatosPerso
 
 # Create your views here.
 def home(request):
-	return render(request,"base.html",{"nombre":"bitia"})
+	return render(request,"base.html",{})
 
 def login(request):
-	return render(request,"login.html",{"nombre":"bitia"})
+	return render(request,"login.html",{})
 
 def registro(request):
 	f_datos_personales= DatosPersonalesForm()

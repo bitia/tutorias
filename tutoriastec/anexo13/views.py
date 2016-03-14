@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .forms import TestAsertividadForm
 from .models import TestAsertividad
 
 
 # Create your views here.
-
+@login_required(login_url='/')
 def hola(request):
     usuario=request.user
     errores=[]
