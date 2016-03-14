@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
-
+from django import forms
 # Create your models here.
 class TestAsertividad (models.Model):
 	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
@@ -15,7 +15,8 @@ class TestAsertividad (models.Model):
 		('4','Nunca'),
 		)
 	pregunta1=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="En una reunión dficil, con con un ambiente tenso,soy capaz de hablar con confianza")
+			blank=False,max_length=2,
+			verbose_name="En una reunión dficil, con con un ambiente tenso,soy capaz de hablar con confianza")
 	pregunta2=models.CharField(choices=opc_asertividad,default ='4',
 			blank=False,max_length=2,verbose_name="Si no estoy segura de una cosa, puedo pedir ayuda facilmente.")
 	pregunta3=models.CharField(choices=opc_asertividad,default ='4',
