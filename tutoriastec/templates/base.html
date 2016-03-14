@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>{% block title %}Tutorias{% endblock title %}</title>
-</head>
-<body>
-	<ul>
-		<li><a href="/">inicio</a></li>
-		<li><a href="/login">login</a></li>
-		<li><a href="/registro">registro</a></li>
-		<li><a href="/recovery_passwd">recovery_passwd</a></li>
-		<li><a href="/alumno/perfil">perfil</a></li>
-		<li><a href="/anexo13/hola">Anexo 13</a></li>
-		
-	</ul>
-	<h1>hola mundo, hola {{user.username}}</h1>
+{% extends "base/basefn.html" %}
+{% block title %}Tutorias{% endblock title %}
+
+
 	{% block contenido %}
+	<header class="row">
+		<nav class="medium-8 medium-centered columns">
+			<ul class="menu">
+			<li><a href="/">inicio</a></li>
+			<li><a href="/login">login</a></li>
+			<li><a href="/registro">registro</a></li>
+			<li><a href="/recovery_passwd">recovery_passwd</a></li>
+			<li><a href="/alumno/perfil">perfil</a></li>
+			
+			</ul>
+		</nav>
 		
+		<h1 class="text-center">hola mundo, hola {{user.username}}</h1>
+		
+	</header>
+	
+	
 	{% endblock contenido %}
-</body>
-</html>
