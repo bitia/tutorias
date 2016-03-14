@@ -23,3 +23,9 @@ git push -u origin master
 
 ###guardaar cambios en github
 git push
+
+###descargar cambios hechos en github
+git pull
+
+### crear una rama 
+git branch nombre
