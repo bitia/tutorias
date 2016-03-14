@@ -46,9 +46,5 @@ def gracias(request):
 
 def diagnostico(request):
     usuario=request.user
-    try :
-            userTest= TestAsertividad.objects.get(usuario = usuario)
-           
-        except:
-  
+
     return render(request,"anexos/diagnostico.html")
