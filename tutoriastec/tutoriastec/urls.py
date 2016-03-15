@@ -15,22 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from home import views
 import anexo13
+import home
 
 urlpatterns = [
+    url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.inicio, name='inicio'),
-    url(r'^login/$', views.login, name='login'),
-    url(r'^registro/$', views.registro, name='registro'),
-    url(r'^recovery_passwd/$', views.recovery_passwd, name='recovery_passwd'),
-    url(r'^alumno/perfil$', views.perfil, name='perfil'),
     url(r'^anexo13/', include('anexo13.urls')),
-    url(r'^log_out/$', views.log_out, name='log_out'),
-    url(r'^home/$', views.home, name='home'),
-
-
-
 
     
 ]
