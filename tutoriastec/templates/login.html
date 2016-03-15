@@ -4,19 +4,26 @@
           <section>
             <div class="row">
               <div class="small-12 medium-6 medium-centered large-4 columns text-center padding-top">
-                <form>
+                <form method="POST" action="/login/">{% csrf_token %}
                 <h1>Inicio de Sesión</h1>
                 <p>
                   Por favor, introduce tu usuario y contraseña. De no tenerlos da click en Registrate.
                 </p>
                   <div class="row">
                     <div class="small-12 columns">
-                    <input type="text" required placeholder="Usuario"></input>
-                    <input type="password" required placeholder="Contraseña"></input>
+                    <input type="text" name="username" required placeholder="Usuario"/>
+                    <input type="password" name="password" required placeholder="contraseña" />
+                    
                     </div>
                     <div class="small-12 columns">
+                    {% if error %}
+                        <div class="callout warning">
+                            <h5>{{error}}</h5>
+                        </div>
+                    {% endif %}
+                    
                     <button class="button expanded">Entrar</button>  
-                    <p><a href="recovery_pass.html">¿Olvidaste tu contraseña?</a></p>
+                    <p><a href="/recovery_passwd/">¿Olvidaste tu contraseña?</a></p>
                     </div>
                   </div>
                 </form>
