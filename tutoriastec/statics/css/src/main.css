@@ -2,3 +2,20 @@ ul{
     margin:0;
     list-style: none;
 }
+
+#fondotec{
+	background: #FFF url('/static/img/back8.jpg') no-repeat center;
+	background-size: cover;
+	padding-top: 5em;
+	padding-bottom: 5em;
+	color: white;
+	text-shadow: 2px 2px #000;
+}
+
+#fondotec h5{
+	font-style: italic;
+}
+
+.padding-top{
+	padding-top: 2em;
+}

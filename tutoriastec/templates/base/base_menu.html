@@ -1,0 +1,29 @@
+{% extends "base/basefn.html" %}
+{% load staticfiles %}
+{% block header %}
+	<header>
+		<section class="logotec text-center">
+			<img src="{% static "img/logos/header2016.jpg"%}">
+		</section>
+		<section class="top-bar">
+		  <nav class="top-bar-left">
+		    <ul class="menu" data-dropdown-menu>
+		      <li class="menu-text">Tutorias TECNM</li>
+		    </ul>
+		  </nav>
+		  <nav class="top-bar-right">
+		    <ul class="menu">
+		      <li><a href="#">Acceder</a></li>
+		      <li><a href="#">Contacto</a></li>
+		    </ul>
+		  </nav>
+		</section>
+	</header>
+{% endblock header %}
+{% block footer %}
+	<footer class="row">
+		<article class="small-12 columns">
+			<h4>Proyecto de tutorias del TecNM Copyright 2016</h4>
+		</article>
+	</footer>
+{% endblock footer %}
