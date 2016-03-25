@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import TestAsertividadForm
 from .models import TestAsertividad
+from django.db.models import F
 
 
 # Create your views here.
@@ -21,6 +22,11 @@ def hola(request):
             print ("es valido el formulario")
             form=f_asertividad.save()
             form.usuario=usuario
+            contador = 0
+            for f in f_asertividad.fields:
+                print f
+                
+            print contador
             form.save()
 
             return redirect("/anexo13/gracias")
@@ -47,5 +53,25 @@ def gracias(request):
 
 def diagnostico(request):
     usuario=request.user
+    test=TestAsertividad.objects.get(usuario=usuario)
+    test=test.__dict__
+    test=removercampos(test,"diagnostico","usuario_id","id","_state")
+    contador=0
+   
+    for k,valor in test.items():
+        if valor=="3" or valor=="4":
+            contador=contador+1
 
-    return render(request,"anexos/diagnostico.html")
+    if contador >= 5:
+        msg= "No paso el Test de asertividad"
+    else: 
+        msg="Paso el Test de asertividad"
+
+
+    return render(request,"anexos/diagnostico.html",{"mensaje":msg})
+
+def removercampos(anexo ,*args):
+    for c, campo in enumerate(args):
+        anexo.pop(campo)
+    return anexo
+
