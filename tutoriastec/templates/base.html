@@ -1,24 +1,41 @@
-{% extends "base/basefn.html" %}
-{% block title %}Tutorias{% endblock title %}
+{% extends "base/base_menu.html" %}
+{% block title %}Plataforma de Tutorias{% endblock title %}
 
 
-	{% block contenido %}
-	<header class="row">
-		<nav class="medium-8 medium-centered columns">
-			<ul class="menu">
-			<li><a href="/">inicio</a></li>
-			<li><a href="/login">login</a></li>
-			<li><a href="/registro">registro</a></li>
-			<li><a href="/recovery_passwd">recovery_passwd</a></li>
-			<li><a href="/alumno/perfil">perfil</a></li>
-			<li><a href="/log_out/">Cerrar Sesión</a></li>
-			
-			</ul>
-		</nav>
+{% block contenido %}
+
+<section id="fondotec">
+	<article class="row">
+		<div class="small-12 medium-7 large-4 columns">
+			<h2>
+				Bienvenido a la Plataforma de Tutorias
+			</h2>
+			<h5>
+				Esta plataforma te servirá para darle seguimiento a tu programa de tutorias.
+			</h5>
+			<form method="post" action="/login.action/" class="padding-top ">
+			<div class="row">
+				<div class="small-6 columns">
+				<input type="text" placeholder="Número de Control"  name="username" required/>	
+				</div>
+				<div class="small-6 columns">
+				<input type="password" placeholder="Contraseña"  name="password" required />	
+				</div>
+				<div class="small-12 small-centered columns">
+					<button class="button expanded success">
+						Iniciar Sesión
+					</button>
+				</div>
+			</div>
+			 </form>
+		</div>
+	</article>
+</section>
+
+<section>
+	<article class="row">
 		
-		<h1 class="text-center">hola mundo, hola {{user.username}}</h1>
-		
-	</header>
-	
-	
-	{% endblock contenido %}
+	</article>
+</section>
+
+{% endblock contenido %}
