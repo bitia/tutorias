@@ -53,21 +53,24 @@ def gracias(request):
 
 def diagnostico(request):
     usuario=request.user
+
     test=TestAsertividad.objects.get(usuario=usuario)
+    anexo13=test
     test=test.__dict__
     test=removercampos(test,"diagnostico","usuario_id","id","_state")
     contador=0
-   
+
     for k,valor in test.items():
         if valor=="3" or valor=="4":
             contador=contador+1
 
     if contador >= 5:
         msg= "No paso el Test de asertividad"
+        anexo13.diagnostico="0"
     else: 
         msg="Paso el Test de asertividad"
-
-
+        anexo13.diagnostico="1"
+        
     return render(request,"anexos/diagnostico.html",{"mensaje":msg})
 
 def removercampos(anexo ,*args):

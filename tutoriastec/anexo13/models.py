@@ -15,7 +15,7 @@ class TestAsertividad (models.Model):
 		('4','Nunca'),
 		)
 	pregunta1=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2)
+			blank=False,max_length=2,verbose_name="En una reunión dficil, con con un ambiente tenso,soy capaz de hablar con confianza")
 	pregunta2=models.CharField(choices=opc_asertividad,default ='4',
 			blank=False,max_length=2,verbose_name="Si no estoy segura de una cosa, puedo pedir ayuda facilmente.")
 	pregunta3=models.CharField(choices=opc_asertividad,default ='4',
@@ -35,12 +35,13 @@ class TestAsertividad (models.Model):
 	
 	DIAGNOSTICO_OPC=(
 		('1','Paso el Test de asertividad'),
-		('2','No paso el Test de asertividad'),
+		('0','No paso el Test de asertividad'),
 		)
 	diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
 			blank=True,max_length=2)
 
-	def __str__(self):
+
+	def __unicode__(self):
 		return "%s "% (self.usuario.username)
 
 class Comentarios(models.Model):
