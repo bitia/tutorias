@@ -1,8 +1,52 @@
-{% extends "base/base_anexo.html" %}
-
+{% extends "base/base_menu.html" %}
+{% block title %}Diagnostico de Test de Asertividad{% endblock title %}
 {% block contenido %}
 
-    <h3>Diagnostico</h3>
-    <h4>resultado : {{mensaje}}</h4>
-    
+<section class="row">
+  <div class="medium-8 medium-centered columns text-center">
+  <h1>Resultado del Anexo {{Anexo.numero}}</h1>
+  <h2>{{Anexo.titulo}}</h2>
+  </div>
+</section>
+
+<section class="row">
+  <div class="medium-8 medium-centered columns text-center">
+    <div class="callout">
+      <p>Descripción: {{Anexo.descripcion}}</p>
+      <p>Diagnóstico: {{mensaje}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="row">
+  <article class="small-12 medium-8 medium-centered columns">
+  <blockquote>
+  Comentario sobre el resultado del test de asertividad.
+  <cite>Tutor: <a href="#">Bitia </a>| hace dos horas</cite>
+  <a href="#" class="hollow button success float-right">Editar</a>
+  </blockquote>
+  </article>
+</section>
+
+<section class="row">
+  <article class="small-12 medium-8 medium-centered columns">
+  <blockquote>
+  Comentario sobre el resultado del test de asertividad.
+  <cite>Tutor: Bitia | hace dos horas</cite>
+  <a href="#" class="hollow button success float-right">Editar</a>
+  </blockquote>
+  </article>
+</section>
+
+<section class="row">
+  <article class="small-12 medium-8 medium-centered columns">
+  <form action=".">
+    <label for="Comentarios">Comentarios
+      <textarea name="comentarios" rows="2" cols="40" placeholder="Introduce tus Comentarios"></textarea>
+    </label>
+    <button class="button" type="submit">ENVIAR</button>
+  </form>
+  </article>
+</section>
+
 {% endblock contenido %}
