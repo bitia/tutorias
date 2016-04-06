@@ -17,14 +17,12 @@ from django.conf.urls import url,include
 from django.contrib import admin
 import anexo13
 import home
-import listaanexos.urls
+import listaanexos
 
 urlpatterns = [
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^anexo13/', include('anexo13.urls')),
     url(r'^anexos/', include('listaanexos.urls')),
-    
-
     
 ]
