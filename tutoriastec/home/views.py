@@ -45,5 +45,6 @@ def registro(request):
 def recovery_passwd(request):
 	return render(request,"recovery_passwd.html",{"nombre":"bitia"})
 
+@login_required(login_url='/')
 def perfil(request):
 	return render(request,"perfil.html",{"nombre":"bitia"})

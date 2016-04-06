@@ -23,7 +23,7 @@
 					<li><a href="/log_out">Cerrar Sesión</a></li>
 					{% endif %}
 
-					{% if not user.is_staff %}
+					{% if not user.is_staff and not user.is_anonymous%}
 					<li><a href="/alumno/perfil">Perfil</a></li>
 					<li><a href="/anexo13/hola">Anexo 13</a></li>
 					<li><a href="/anexos">Anexos</a></li>
