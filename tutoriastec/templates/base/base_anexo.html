@@ -1,4 +1,4 @@
-{% extends "base/basefn.html" %}
+{% extends "base/base_menu.html" %}
 {% load staticfiles %}
 {% block mascss %}
     <link rel="stylesheet" href="{% static "owl-carousel/owl.carousel.css" %}">
@@ -12,8 +12,8 @@
 {% block scriptjs %}
     <script type="text/javascript">
     $("#owl-form").owlCarousel({
- 
-      navigation:false, 
+
+      navigation:false,
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
