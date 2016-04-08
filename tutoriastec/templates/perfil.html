@@ -1,7 +1,76 @@
-{% extends "base.html" %}
+{% extends "base/base_menu.html" %}
 {% block title %}perfil{% endblock title %}
 {% block contenido %}
+<header>
+			 <div class="row text-center">
+				 <div class="medium-6  medium-centered columns">
+					 <img  width="150px" src="../public/img/foto.jpg" class="circulo">
+					 <h1>Jonathan Marín Flores</h1>
+				 </div>
+			 </div>
+		 </header>
+		 <section>
+			 <div class="row text-center">
+				 <div class="medium-6  medium-centered columns padding-top">
+				 <p>Carrera: Ingeniería en Sistemas Computacionales</p>
+				 <p>N. C.: 10360601</p>
+				 <p>Semestre: 12</p>
+				 <p>Sexo: Masculino</p>
+				 <p>E-mail: blesto200@gmail.com</p>
+				 <p>Telefono Domicilio: NA</p>
+				 <p>Celular: 2381667723</p>
+				 <p>Estado Civil: Casado</p>
+				 <p>No. de Hijos: 1</p>
+				 <p>Fecha de Nacimiento: 30/Junio/1992</p>
+				 <p>Lugar de Nacimiento: San Juan de los Cues, Teotitlán de Flores Magón, Oaxaca</p>
+				 <p>Domicilio Actual: Retorno Aldama B Edificio 1216 Int. 8</p>
+				 <p><a class="button" data-open="exampleModal1">Editar</a></p>
+				 </div>
+			 </div>
+		 </section>
+		 <div class="full reveal" id="exampleModal1" data-reveal>
+		 <h1>Edita Tus Datos</h1>
+		 <p>A continuación puedes modificar tus datos:</p>
+		 <form>
+		 <div class="row">
+			 <div class="small-12 medium-6 large-4 columns">
+				 <label>Correo Electrónico:
+					 <input type="email" placeholder="Introduce tu Correo Electrónico" required>
+				 </label>
+			 </div>
+			 <div class="small-12 medium-6 large-4   columns">
+				 <label>Telefono De Domicilio:
+					 <input type="text" placeholder="Introduce tu Telefono de Domicilio" maxlength="10" required>
+				 </label>
+			 </div>
+			 <div class="small-12 medium-6 large-4   columns">
+				 <label>Celular:
+					 <input type="text" placeholder="Introduce tu Número de Celular" maxlength="10" required>
+				 </label>
+			 </div>
+			 <div class="small-12 medium-6 large-4   columns">
 
+			 </div>
+			 <div class="small-12 medium-6 large-4   columns">
+				 <label>Fecha de Nacimiento:
+					 <input type="date" required>
+				 </label>
+			 </div>
+			 <div class="small-12 medium-6 large-4   columns">
+				 <label>Lugar de Nacimiento:
+					 <input type="text" placeholder="Lugar de Nacimiento" maxlength="40" required>
+				 </label>
+			 </div>
+			 <div class="small-12 medium-6 large-4   columns">
+				 <label>Domicilio Actual:
+					 <input type="text" placeholder="Introduce tu Domicilio Actual" required>
+				 </label>
+			 </div>          
+		 </div>
+		 <input type="submit" value="Guardar Cambios"></input>
+	 </form>
 
-	<h2>perfil del alumno</h2>
+		 <button class="close-button" data-close aria-label="Close modal" type="button">
+			 <span aria-hidden="true">&times;</span>
+		 </button>
 {% endblock contenido %}

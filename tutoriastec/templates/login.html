@@ -1,4 +1,4 @@
-{% extends "base/basefn.html" %}
+{% extends "base/base_menu.html" %}
 {% block title %}Inicio de Sesión{% endblock title %}
 {% block contenido %}
           <section>
@@ -13,7 +13,7 @@
                     <div class="small-12 columns">
                     <input type="text" name="username" required placeholder="Usuario"/>
                     <input type="password" name="password" required placeholder="contraseña" />
-                    
+
                     </div>
                     <div class="small-12 columns">
                     {% if error %}
@@ -21,13 +21,13 @@
                             <h5>{{error}}</h5>
                         </div>
                     {% endif %}
-                    
-                    <button class="button expanded">Entrar</button>  
+
+                    <button class="button expanded">Entrar</button>
                     <p><a href="/recovery_passwd/">¿Olvidaste tu contraseña?</a></p>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-          </section>    
+          </section>
 {% endblock contenido %}

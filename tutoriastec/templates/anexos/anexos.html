@@ -1,9 +1,39 @@
 {% extends "base/base_menu.html" %}
+{% load staticfiles %}
 {% block title %}Lista de Anexos{% endblock title %}
 {% block contenido %}
-	<section class="row">
-		<article class="small-12 medium-6 large-4 medium-centered columns text-center">
+	<header class="row">
+		<div class="small-12 medium-6 large-4 medium-centered columns text-center">
 			<h2>Lista de Anexos</h2>
-		</article>
+		</div>
+	</header>
+	<section class="row">
+		<div class="small-up-2 medium-up-3 large-up-4 small-centered">
+  <div class="column">
+    <img src="{% static "img/crecimiento.jpg" %}" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="{% static "img/datos.jpeg" %}" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="{% static "img/formato.png" %}" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="{% static "img/interview.png" %}" class="thumbnail" alt="">
+  </div>
+	<div class="column">
+    <img src="{% static "img/crecimiento.jpg" %}" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="{% static "img/datos.jpeg" %}" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="{% static "img/formato.png" %}" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="{% static "img/interview.png" %}" class="thumbnail" alt="">
+  </div>
+</div>
 	</section>
+
 {% endblock contenido %}

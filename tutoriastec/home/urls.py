@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
@@ -11,4 +12,6 @@ urlpatterns = [
     url(r'^recovery_passwd/$', views.recovery_passwd, name='recovery_passwd'),
     url(r'^log_out/$', views.log_out, name='log_out'),
     url(r'^alumno/perfil$', views.perfil, name='perfil'),
+    url(r'^anexos/', TemplateView.as_view(template_name="anexos/anexos.html")),
+
     ]
