@@ -37,33 +37,30 @@ def contar (org_estudio_data):
            contador=contador+1
     return contador
 
-def diag_orgestudio(contador):
-    if contador ==20:
-        msg= "Muy Alto"
-        diagnostico="8"
-    elif contador >=19 :
-        msg="Alto"
-        diagnostico="7"
-    elif contador >=18 :
-        msg="Por encima del promedio"
-        diagnostico="6"
-    elif contador >=16 :
-        msg="Promedio alto"
-        diagnostico="5"
-    elif contador >=14 :
-        msg="Promedio"
-        diagnostico="4"
-    elif contador >=12 :
-        msg="Promedio bajo"
-        diagnostico="3"
-    elif contador >=11 :
-        msg="Por debajo del promedio"
-        diagnostico="2"
-    elif contador >=10 :
-        msg="Bajo"
-        diagnostico="1"
-    else:
-        msg="Muy bajo"
-        diagnostico="0"    
-    return msg
-        
+#    tabla=["I","II","III","IV","V"]
+def valores(tipo,contador):
+    calificacion=""
+    lis2=[]
+    datos=[[20,20,20,[57,60],"Muy alto"],
+    [19,[18,19],19,[52,56],"Alto"],
+    [18,17,18,[50,51],"Por encima del promedio"],
+    [[16,17],16,17,[48,49],"promedio alto"],
+    [[14,15],[14,15],16,[43,47],"Promedio"],
+    [[12,13],13,15,[39,42],"Promedio bajo"],
+    [11,12,[13,14],[37,38],"Por debajo del promedio"],
+    [10,11,12,[34,36],"Bajo"],
+    [[0,9],[0,10],[0,11],[0,33],"Muy alto"]]
+    for i in range(0,8):
+        if type(datos[i][tipo]) is int:
+            if contador==datos[i][tipo]:
+                calificacion=datos[i][4]
+        else:
+            lis2=datos[i][tipo]
+            if contador>=lis2[0] and contador<=lis2[1]:
+                calificacion=datos[i][4]
+    return calificacion
+
+
+
+
+
