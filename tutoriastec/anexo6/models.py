@@ -8,7 +8,7 @@ class DatosPersonales(models.Model):
 	numero_control= models.CharField(max_length=50)
 	semestre = models.IntegerField()
 	fecha = models.DateField()
-	
+
 class DatosGenerales(models.Model):
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
@@ -27,9 +27,8 @@ class DatosGenerales(models.Model):
 		)
 	estado_civil=models.CharField(choices=estado_civil_opc,
 			default='soltero', max_length=50)
-
 	numero_hijos = models.IntegerField(null=True,blank=True)
-	domicilio_actual = models.CharField(max_length=50,default="") 
+	domicilio_actual = models.CharField(max_length=50,default="")
 
 	escolaridad_opc=(
 		('preparatoria',"Preparatoria"),
@@ -37,7 +36,6 @@ class DatosGenerales(models.Model):
 		)
 	escolaridad=models.CharField(choices=escolaridad_opc,
 			default='preparatoria', max_length=50)
-
 	nombre_institucion = models.CharField(max_length=50,default="")
 
 	becado_opc=(
@@ -130,5 +128,5 @@ class ContactosEmergencia (models.Model):
 
 
 # python manager.py makemigrations
-# python manager.py migrate anexo6 
+# python manager.py migrate anexo6
 #python manager.py runserver
