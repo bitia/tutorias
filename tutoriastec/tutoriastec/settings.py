@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'anexo13',
     'listaanexos',
     'anexo11',
+    'anexo10',
 ]
 
 MIDDLEWARE_CLASSES = [

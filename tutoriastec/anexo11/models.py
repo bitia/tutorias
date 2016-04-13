@@ -11,7 +11,7 @@ class OrganizacionEstudio(models.Model):
         ('1','Si'),
         ('0','No'),
         )
-    pregunta1=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta1=models.CharField(choices=opc_asertividad,default ='',
             blank=False,max_length=2,verbose_name="preguntas")
     pregunta2=models.CharField(choices=opc_asertividad,default ='0',
             blank=False,max_length=2,verbose_name="preguntas")
