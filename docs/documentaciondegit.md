@@ -29,3 +29,5 @@ git pull
 
 ### crear una rama 
 git branch nombre
+
+###Regresar al proyecto en el ultimo commit

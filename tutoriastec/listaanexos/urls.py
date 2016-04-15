@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     ##  /anexos/ 
-    url(r'^$', views.listaanexos, name='listaanexos'),
+    ##url(r'^$', views.listaanexos, name='listaanexos'),
+    url(r'lista$', views.listaanexos, name='listaanexos'),
     ]

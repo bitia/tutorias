@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.db import models
-class OrganizacionEstudio(models.Model):
-    usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+from django.contrib.auth.models import User
+from django import forms
 
+class OrganizacionEstudio(models.Model):
+   
+    usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
     opc_asertividad=(
         ('1','Si'),
         ('0','No'),
@@ -46,7 +49,7 @@ class OrganizacionEstudio(models.Model):
             blank=False,max_length=2,verbose_name="preguntas") 
     pregunta19=models.CharField(choices=opc_asertividad,default ='0',
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta20=models.CharField(choices=opc_asertividad,default ='0',s
+    pregunta20=models.CharField(choices=opc_asertividad,default ='0',
             blank=False,max_length=2,verbose_name="preguntas")
 
     DIAGNOSTICO_OPC=(
