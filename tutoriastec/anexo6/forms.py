@@ -1,10 +1,10 @@
-from django import forms 
+from django import forms
 from .models import ContactosEmergencia, DatosGenerales, DatosPersonales
 
 class ContactosEmergenciaForm(forms.ModelForm):
 	class Meta:
 		model= ContactosEmergencia
-		exclude=["telefono"]
+		exclude=["alumno"]
 
 class DatosGeneralesForm(forms.ModelForm):
 	class Meta:

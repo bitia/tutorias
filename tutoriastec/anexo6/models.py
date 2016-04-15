@@ -4,8 +4,21 @@ from django.db import models
 
 # Create your models here.
 class DatosPersonales(models.Model):
-	carrera = models.CharField(max_length=30)
-	numero_control= models.CharField(max_length=50)
+	carrera_opc=(
+	('administracion','Lic. en Administración'),
+	('contador','Lic. en Contador Público'),
+	('bioquimica','Ing. Bioquímica'),
+	('civil','Ing. Civil'),
+	('electronica','Ing. Electrónica'),
+	('gestion','Ing. en Gestión Empresarial'),
+	('logistica','Ing. en Logística'),
+	('sistemas','Ing. en Sistemas Computacionales'),
+	('industrial','Ing. Industrial'),
+	('mecatronica','Ing. Mecatrónica')
+	)
+	carrera = models.CharField(choices=carrera_opc,
+			default='civil', max_length=30, blank=False)
+	numero_control= models.CharField(max_length=8)
 	semestre = models.IntegerField()
 	fecha = models.DateField()
 
@@ -87,7 +100,6 @@ class DatosGenerales(models.Model):
 	escolaridad_padre=models.CharField(choices=escolaridad_padre_opc,
 			default='sinestudio', max_length=50)
 
-
 	escolaridad_madre_opc = (
 		('primaria',"Primaria"),
 		('secundaria',"Secundaria"),
@@ -113,19 +125,13 @@ class DatosGenerales(models.Model):
 		)
 	madre_vive=models.CharField(choices=madre_vive_opc,
 			default='si', max_length=50)
-
 	nom_trabajo_padre = models.CharField(max_length=50,default="")
 	nom_trabajo_madre = models.CharField(max_length=50,default="")
-
 
 class ContactosEmergencia (models.Model):
 	nombre = models.CharField(max_length=50)
 	telefono = models.IntegerField()
 	alumno = models.ForeignKey(DatosGenerales)
-
-
-
-
 
 # python manager.py makemigrations
 # python manager.py migrate anexo6
