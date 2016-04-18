@@ -1,10 +1,11 @@
 {% extends "base/base_menu.html" %}
-{% block title %}perfil{% endblock title %}
+{% load staticfiles %}
+{% block title %}Perfil{% endblock title %}
 {% block contenido %}
 <header>
 			 <div class="row text-center">
 				 <div class="medium-6  medium-centered columns">
-					 <img  width="150px" src="../public/img/foto.jpg" class="circulo">
+					 <img  width="150px" src="{% static "img/1.png" %}" class="circulo">
 					 <h1>Jonathan Marín Flores</h1>
 				 </div>
 			 </div>
@@ -65,7 +66,7 @@
 				 <label>Domicilio Actual:
 					 <input type="text" placeholder="Introduce tu Domicilio Actual" required>
 				 </label>
-			 </div>          
+			 </div>
 		 </div>
 		 <input type="submit" value="Guardar Cambios"></input>
 	 </form>

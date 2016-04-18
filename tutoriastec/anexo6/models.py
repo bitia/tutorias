@@ -5,14 +5,16 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class DatosPersonales(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	carrera = models.CharField(max_length=30)
 	numero_control= models.CharField(max_length=50)
 	semestre = models.IntegerField()
 	fecha = models.DateField()
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+	
 	
 class DatosGenerales(models.Model):
 	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
 	nombre = models.CharField( max_length=50)

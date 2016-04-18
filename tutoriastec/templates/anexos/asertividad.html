@@ -9,22 +9,23 @@
             </div>
         </header>
     </section>
+
 <section class="row">
         <div class="medium-6 medium-centered columns" >
             <form action="./hola" method="post">{% csrf_token %}
                 <h3>Bienvenido al formulario</h3>
                 <div id="owl-form" class="owl-carousel owl-theme" >
-                   
+
                    {% for field in form %}
                         <div class="item">
                             <div class="callout">
 
                             <label>{{ field.label_tag }}
                             {{ field }}
-                                
+
                             </label>
                              <span class="error">{{ field.errors }}</span>
-                
+
                             {% if field.help_text %}
                             <p class="help">{{ field.help_text|safe }}</p>
                             {% endif %}
@@ -50,9 +51,8 @@
                           </p>
                       </div>
                   </div>
-                </div> <!-- END owldemo-->               
+                </div> <!-- END owldemo-->
             </form>
         </div>
     </section>
 {% endblock contenido %}
-

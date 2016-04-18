@@ -11,45 +11,45 @@ class OrganizacionEstudio(models.Model):
         ('1','Si'),
         ('0','No'),
         )
-    pregunta1=models.CharField(choices=opc_asertividad,default ='',
+    pregunta1=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta2=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta2=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta3=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta3=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta4=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta4=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas") 
-    pregunta5=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta5=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta6=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta6=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta7=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta7=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta8=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta8=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas") 
-    pregunta9=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta9=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta10=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta10=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta11=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta11=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta12=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta12=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta13=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta13=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta14=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta14=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas") 
-    pregunta15=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta15=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta16=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta16=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta17=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta17=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta18=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta18=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas") 
-    pregunta19=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta19=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
-    pregunta20=models.CharField(choices=opc_asertividad,default ='0',
+    pregunta20=models.CharField(choices=opc_asertividad,
             blank=False,max_length=2,verbose_name="preguntas")
 
     DIAGNOSTICO_OPC=(

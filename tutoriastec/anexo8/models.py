@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
-
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class FormatoEntrevista(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	#nombre anexo6/models.py/Datosgenerales
 	estatura = models.FloatField()
 	peso = models.FloatField()
@@ -76,6 +77,7 @@ class FormatoEntrevista(models.Model):
 
 
 class EstadoPsicofisiologicos(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 		opc_123 =(
 		('1',"Muy frecuente"),
 		('2',"Frecuente"),
@@ -143,6 +145,7 @@ class DatosHermanos(models.Model):
 	alumno = models.ForeignKey(FormatoEntrevista,on_delete=models.CASCADE)
 
 class AreaIntegracion(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	relacion_opc = (
 		('1',"Muy buena"),
 		('2',"Buena"),
@@ -204,6 +207,7 @@ class AreaIntegracion(models.Model):
 	act_recreativa = models.CharField(max_length=50,default="")
 
 class CaracteristicasPersonales(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	opc_caracteristicas = (
 		('1',"No"),
 		('2',"Poco"),
@@ -262,6 +266,7 @@ class CaracteristicasPersonales(models.Model):
 			default='1',max_length=50)
 	
 class AreaPsicopedagogica(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	gustaria_ser = models.CharField(max_length=50,blank=False)
 	ayuda_casa_tareas = models.CharField(max_length=50,blank=False)
 	problemas_intervienen = models.CharField(max_length=50,blank=False)
@@ -294,6 +299,7 @@ class AreaPsicopedagogica(models.Model):
 	asig_reprovadas = models.CharField(max_length=50,blank= True)
 
 class PlanDeVida (models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	planes_inmediatos = models.TextField(blank= False)
 	metas_vida = models.TextField(blank= False)
 	#caracteristcaspersonales 
