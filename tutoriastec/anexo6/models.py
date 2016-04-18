@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class DatosPersonales(models.Model):
@@ -8,8 +9,10 @@ class DatosPersonales(models.Model):
 	numero_control= models.CharField(max_length=50)
 	semestre = models.IntegerField()
 	fecha = models.DateField()
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	
 class DatosGenerales(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
 	nombre = models.CharField( max_length=50)
@@ -120,10 +123,11 @@ class DatosGenerales(models.Model):
 	nom_trabajo_madre = models.CharField(max_length=50,default="")
 
 
+
 class ContactosEmergencia (models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	nombre = models.CharField(max_length=50)
 	telefono = models.IntegerField()
-	alumno = models.ForeignKey(DatosGenerales)
 
 
 
