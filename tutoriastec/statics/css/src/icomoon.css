@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'tutoriasfont';
+    src:    url('/static/fonts/tutoriasfont.eot?tun7xy');
+    src:    url('/static/fonts/tutoriasfont.eot?tun7xy#iefix') format('embedded-opentype'),
+        url('/static/fonts/tutoriasfont.ttf?tun7xy') format('truetype'),
+        url('/static/fonts/tutoriasfont.woff?tun7xy') format('woff'),
+        url('/static/fonts/tutoriasfont.svg?tun7xy#tutoriasfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tutoriasfont';
+    src:    url('/static/fonts/tutoriasfont2.eot?tun7xy');
+    src:    url('/static/fonts/tutoriasfont2.eot?tun7xy#iefix') format('embedded-opentype'),
+        url('/static/fonts/tutoriasfont2.woff?tun7xy') format('woff'),
+        url('/static/fonts/tutoriasfont2.ttf?tun7xy') format('truetype'),
+        url('/static/fonts/tutoriasfont2.svg?tun7xy#tutoriasfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'tutoriasfont' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.it-home:before {
+    content: "\e900";
+}
+.it-pencil:before {
+    content: "\e901";
+}
+.it-books:before {
+    content: "\e902";
+}
+.it-profile:before {
+    content: "\e903";
+}
+.it-file-picture:before {
+    content: "\e904";
+}
+.it-file-music:before {
+    content: "\e905";
+}
+.it-file-play:before {
+    content: "\e906";
+}
+.it-folder-open:before {
+    content: "\e907";
+}
+.it-folder-download:before {
+    content: "\e908";
+}
+.it-folder-upload:before {
+    content: "\e909";
+}
+.it-price-tag:before {
+    content: "\e90a";
+}
+.it-phone:before {
+    content: "\e90b";
+}
+.it-envelop:before {
+    content: "\e90c";
+}
+.it-location2:before {
+    content: "\e90d";
+}
+.it-forward:before {
+    content: "\e90e";
+}
+.it-reply:before {
+    content: "\e90f";
+}
+.it-bubbles3:before {
+    content: "\e910";
+}
+.it-user:before {
+    content: "\e911";
+}
+.it-users:before {
+    content: "\e912";
+}
+.it-user-tie:before {
+    content: "\e913";
+}
+.it-spinner9:before {
+    content: "\e914";
+}
+.it-search:before {
+    content: "\e915";
+}
+.it-key:before {
+    content: "\e916";
+}
+.it-cog:before {
+    content: "\e917";
+}
+.it-pie-chart:before {
+    content: "\e918";
+}
+.it-stats-dots:before {
+    content: "\e919";
+}
+.it-switch:before {
+    content: "\e91a";
+}
+.it-link:before {
+    content: "\e91b";
+}
+.it-star-empty:before {
+    content: "\e91c";
+}
+.it-star-half:before {
+    content: "\e91d";
+}
+.it-star-full:before {
+    content: "\e91e";
+}
+.it-blocked:before {
+    content: "\e91f";
+}
+.it-cross:before {
+    content: "\e920";
+}
+.it-checkmark:before {
+    content: "\e921";
+}
+.it-circle-right:before {
+    content: "\e922";
+}
+.it-circle-left:before {
+    content: "\e923";
+}
+.it-google-plus3:before {
+    content: "\e924";
+}
+.it-google-drive:before {
+    content: "\e925";
+}
+.it-facebook2:before {
+    content: "\e926";
+}
+.it-instagram:before {
+    content: "\e927";
+}
+.it-whatsapp:before {
+    content: "\e928";
+}
+.it-twitter:before {
+    content: "\e929";
+}
+.it-youtube:before {
+    content: "\e92a";
+}
+.it-chrome:before {
+    content: "\e92b";
+}
+.it-firefox:before {
+    content: "\e92c";
+}
+.it-html-five:before {
+    content: "\e92d";
+}
+.it-git:before {
+    content: "\e92e";
+}
+.it-files-empty:before {
+    content: "\e900";
+}
+.it-file-text2:before {
+    content: "\e901";
+}
