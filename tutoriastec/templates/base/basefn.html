@@ -7,24 +7,25 @@
     <title>{% block title %}Tutorias{% endblock title %}</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static "css/vendor/foundation.css"%}" />
+    <link rel="stylesheet" href="{% static "css/src/icomoon.css"%}" />
     <link rel="stylesheet" href="{% static "css/src/main.css"%}" />
     {% block mascss %}
-      
+
     {% endblock mascss %}
   </head>
   <body>
     {% block header %}
-      
+
     {% endblock header %}
 
 
     {% block contenido %}
-      
+
     {% endblock contenido %}
 
 
     {% block footer %}
-      
+
     {% endblock footer %}
 
     <script src="{% static "js/vendor/jquery.min.js"%}"></script>
@@ -32,13 +33,13 @@
     <script src="{% static "js/vendor/foundation.min.js"%}"></script>
 
     {% block masjs %}
-      
+
     {% endblock masjs %}
     <script>
       $(document).foundation();
     </script>
     {% block scriptjs %}
-      
+
     {% endblock scriptjs %}
 
 
