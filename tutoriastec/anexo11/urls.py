@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url,patterns
-from . import views
+from .views import OrgStudioView
+
 
 urlpatterns = [
-    ##  /anexo13/ 
-    url(r'hola$', views.ListaOrgEst.as_view(), name='plist'),
+    url(r'^$', OrgStudioView.as_view() , name='anexo11'),
 
-    ]
+]

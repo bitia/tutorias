@@ -77,7 +77,7 @@ class FormatoEntrevista(models.Model):
 
 
 class EstadoPsicofisiologicos(models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+
 		opc_123 =(
 		('1',"Muy frecuente"),
 		('2',"Frecuente"),
