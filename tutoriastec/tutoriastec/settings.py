@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
     'home',
     'anexo6',
     'anexo8',
     'anexo13',
     'listaanexos',
     'anexo11',
+    'anexo10',
 ]
 
 MIDDLEWARE_CLASSES = [

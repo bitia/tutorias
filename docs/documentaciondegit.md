@@ -31,3 +31,4 @@ git pull
 git branch nombre
 
 ###Regresar al proyecto en el ultimo commit
+git reset --hard master

@@ -17,6 +17,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 import anexo13
 import home
+import anexo11
 import listaanexos
 
 urlpatterns = [
@@ -24,5 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^anexo13/', include('anexo13.urls')),
     url(r'^anexos/', include('listaanexos.urls')),
+    url(r'^anexo11/', include('anexo11.urls')),
     
 ]

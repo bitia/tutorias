@@ -1,28 +1,20 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class DatosPersonales(models.Model):
-	carrera_opc=(
-	('administracion','Lic. en Administración'),
-	('contador','Lic. en Contador Público'),
-	('bioquimica','Ing. Bioquímica'),
-	('civil','Ing. Civil'),
-	('electronica','Ing. Electrónica'),
-	('gestion','Ing. en Gestión Empresarial'),
-	('logistica','Ing. en Logística'),
-	('sistemas','Ing. en Sistemas Computacionales'),
-	('industrial','Ing. Industrial'),
-	('mecatronica','Ing. Mecatrónica')
-	)
-	carrera = models.CharField(choices=carrera_opc,
-			default='civil', max_length=30, blank=False)
-	numero_control= models.CharField(max_length=8)
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+	carrera = models.CharField(max_length=30)
+	numero_control= models.CharField(max_length=50)
 	semestre = models.IntegerField()
 	fecha = models.DateField()
-
+	
+	
 class DatosGenerales(models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
 	nombre = models.CharField( max_length=50)
@@ -40,8 +32,9 @@ class DatosGenerales(models.Model):
 		)
 	estado_civil=models.CharField(choices=estado_civil_opc,
 			default='soltero', max_length=50)
+
 	numero_hijos = models.IntegerField(null=True,blank=True)
-	domicilio_actual = models.CharField(max_length=50,default="")
+	domicilio_actual = models.CharField(max_length=50,default="") 
 
 	escolaridad_opc=(
 		('preparatoria',"Preparatoria"),
@@ -49,6 +42,7 @@ class DatosGenerales(models.Model):
 		)
 	escolaridad=models.CharField(choices=escolaridad_opc,
 			default='preparatoria', max_length=50)
+
 	nombre_institucion = models.CharField(max_length=50,default="")
 
 	becado_opc=(
@@ -100,6 +94,7 @@ class DatosGenerales(models.Model):
 	escolaridad_padre=models.CharField(choices=escolaridad_padre_opc,
 			default='sinestudio', max_length=50)
 
+
 	escolaridad_madre_opc = (
 		('primaria',"Primaria"),
 		('secundaria',"Secundaria"),
@@ -125,14 +120,21 @@ class DatosGenerales(models.Model):
 		)
 	madre_vive=models.CharField(choices=madre_vive_opc,
 			default='si', max_length=50)
+
 	nom_trabajo_padre = models.CharField(max_length=50,default="")
 	nom_trabajo_madre = models.CharField(max_length=50,default="")
 
+
+
 class ContactosEmergencia (models.Model):
+	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 	nombre = models.CharField(max_length=50)
 	telefono = models.IntegerField()
-	alumno = models.ForeignKey(DatosGenerales)
+
+
+
+
 
 # python manager.py makemigrations
-# python manager.py migrate anexo6
+# python manager.py migrate anexo6 
 #python manager.py runserver

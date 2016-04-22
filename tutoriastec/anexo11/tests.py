@@ -61,6 +61,9 @@ def valores(tipo,contador):
     return calificacion
 
 
-
+    def removercampos(anexo ,*args):
+        for c, campo in enumerate(args):
+        anexo.pop(campo)
+    return anexo
 
 
