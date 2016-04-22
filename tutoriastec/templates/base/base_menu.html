@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block header %}
 <div data-sticky-container class="show-for-medium">
-  <div class="title-bar" data-sticky data-options="marginTop:0.001;" style="width:100%; background:white;">
+  <div class="title-bar" data-sticky data-options="marginTop:0.001;" style="width:100%; background:white; color:black;">
 		<header>
 			<section class="logotec text-center">
 				<img src="{% static "img/logos/header2016.jpg"%}">
@@ -10,7 +10,7 @@
 			<section class="top-bar">
 			  <nav class="top-bar-left">
 			    <ul class="menu" data-dropdown-menu>
-			      <li class="menu-text">Tutorias TECNM</li>
+			      <li class="menu-text"><i id="menutec" class="menu-icon" data-toggle="offCanvas"></i>  Tutorias TECNM</li>
 			    </ul>
 			  </nav>
 			  <nav class="top-bar-right">
@@ -47,7 +47,7 @@
 	<section class="top-bar">
 		<nav class="top-bar-left">
 			<ul class="menu" data-dropdown-menu>
-				<li class="menu-text">Tutorias TECNM</li>
+				<li class="menu-text"><i id="menutec" class="menu-icon" data-toggle="offCanvas"></i>  Tutorias TECNM</li>
 			</ul>
 		</nav>
 		<nav class="top-bar-right">
@@ -74,6 +74,7 @@
 		</nav>
 	</section>
 </header>
+
 {% endblock header %}
 {% block footer %}
 	<footer class="row">

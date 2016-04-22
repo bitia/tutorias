@@ -14,19 +14,42 @@
     {% endblock mascss %}
   </head>
   <body>
-    {% block header %}
+    {% if not user.is_anonymous%}
+    <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+        <button class="close-button" aria-label="Close menu" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <ul class="vertical menu">
+         <li><a href="#">Foundation</a></li>
+         <li><a href="#">Dot</a></li>
+         <li><a href="#">ZURB</a></li>
+         <li><a href="#">Com</a></li>
+         <li><a href="#">Slash</a></li>
+         <li><a href="#">Sites</a></li>
+      </ul>
+      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+      {%endif%}
+        {% block header %}
 
-    {% endblock header %}
+        {% endblock header %}
 
 
-    {% block contenido %}
+        {% block contenido %}
 
-    {% endblock contenido %}
+        {% endblock contenido %}
 
 
-    {% block footer %}
+        {% block footer %}
 
-    {% endblock footer %}
+        {% endblock footer %}
+    {% if  user.is_anonymous%}
+    </div>
+    </div>
+    </div>
+    {%endif%}
 
     <script src="{% static "js/vendor/jquery.min.js"%}"></script>
     <script src="{% static "js/vendor/what-input.min.js"%}"></script>
