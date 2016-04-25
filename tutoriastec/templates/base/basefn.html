@@ -22,12 +22,21 @@
           <span aria-hidden="true">&times;</span>
         </button>
       <ul class="vertical menu">
-         <li><a href="#">Foundation</a></li>
-         <li><a href="#">Dot</a></li>
-         <li><a href="#">ZURB</a></li>
-         <li><a href="#">Com</a></li>
-         <li><a href="#">Slash</a></li>
-         <li><a href="#">Sites</a></li>
+      <section class="row">
+        <div class="columns padding-top">
+          <img src="{% static "img/2.png"%}" alt="" />
+          <h5>Bienvenido {{user.username}}</h5>
+        </div>
+      </section>
+        <ul>
+          <li class="padding-top"><i class="it-home"></i><a href="#">  Home</a></li>
+          <li class="padding-top"><i class="it-profile"></i><a href="#">  Perfil</a></li>
+          <li class="padding-top"><i class="it-books"></i><a href="#">  Anexos</a></li>
+          <li class="padding-top"><i class="it-user"></i><a href="#">  Actividades</a></li>
+          <li class="padding-top"><i class="it-user"></i><a href="#">  Ayuda</a></li>
+          <li class="padding-top"><i class="it-switch"></i><a href="#">  Cerrar Sesión</a></li>
+          <li class="padding-top"><i class="it-phone"></i><a href="#">  Contacto</a></li>
+        </ul>
       </ul>
       </div>
       <div class="off-canvas-content" data-off-canvas-content>

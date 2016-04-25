@@ -4,9 +4,9 @@
 {% block contenido %}
     <div class="container">
       <div class="row">
-        <form method="POST" action="">{% csrf_token %}
+        <form method="POST" action=".">{% csrf_token %}
           {{ form.as_p }}
-            <input type="submit" value="Submit">
+            <input class="button success"  type="submit" value="enviar datos">
         </form>
       </div>
     </div>

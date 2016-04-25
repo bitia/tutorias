@@ -21,18 +21,17 @@
 						{% endif %}
 
 						{% if user.is_staff%}
-						<li><a href="/admin" title="Admin"><i class="it-user-tie"></i>Admin</a></li>
-						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i>Cerrar Sesión</a></li>
+						<li><a href="/admin" title="Admin"><i class="it-user-tie"></i></a></li>
+						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i></a></li>
 						{% endif %}
 
 						{% if not user.is_staff and not user.is_anonymous%}
-						<li><a href="/alumno/perfil" title="Perfil"><i class="it-user"></i>Perfil</a></li>
-						<li><a href="/anexo13/hola" title="Anexo 13"><i class="it-files-empty"></i>Anexo 13</a></li>
-						<li><a href="/anexos" title="Anexos"><i class="it-books"></i>Anexos</a></li>
-						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i>Cerrar Sesión</a></li>
+						<li><a href="/alumno/perfil" title="Perfil"><i class="it-user"></i></a></li>
+						<li><a href="/anexos" title="Anexos"><i class="it-books"></i></a></li>
+						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i></a></li>
 						{% endif %}
 
-			      <li><a href="/contacto"><i class="it-phone"></i>Contacto</a></li>
+			      <li><a href="/contacto"><i class="it-phone"></i></a></li>
 			    </ul>
 			  </nav>
 			</section>
@@ -64,7 +63,6 @@
 
 				{% if not user.is_staff and not user.is_anonymous%}
 				<li><a href="/alumno/perfil" title="Perfil"><i class="it-user"></i></a></li>
-				<li><a href="/anexo13/hola" title="Anexo 13"><i class="it-files-empty"></i></a></li>
 				<li><a href="/anexos" title="Anexos"><i class="it-books"></i></a></li>
 				<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i></a></li>
 				{% endif %}
