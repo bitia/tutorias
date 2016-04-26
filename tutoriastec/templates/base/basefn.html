@@ -14,19 +14,51 @@
     {% endblock mascss %}
   </head>
   <body>
-    {% block header %}
+    {% if not user.is_anonymous%}
+    <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+        <button class="close-button" aria-label="Close menu" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <ul class="vertical menu">
+      <section class="row">
+        <div class="columns padding-top">
+          <img src="{% static "img/2.png"%}" alt="" />
+          <h5>Bienvenido {{user.username}}</h5>
+        </div>
+      </section>
+        <ul>
+          <li class="padding-top"><i class="it-home"></i><a href="#">  Home</a></li>
+          <li class="padding-top"><i class="it-profile"></i><a href="#">  Perfil</a></li>
+          <li class="padding-top"><i class="it-books"></i><a href="#">  Anexos</a></li>
+          <li class="padding-top"><i class="it-user"></i><a href="#">  Actividades</a></li>
+          <li class="padding-top"><i class="it-user"></i><a href="#">  Ayuda</a></li>
+          <li class="padding-top"><i class="it-switch"></i><a href="#">  Cerrar Sesión</a></li>
+          <li class="padding-top"><i class="it-phone"></i><a href="#">  Contacto</a></li>
+        </ul>
+      </ul>
+      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+      {%endif%}
+        {% block header %}
 
-    {% endblock header %}
+        {% endblock header %}
 
 
-    {% block contenido %}
+        {% block contenido %}
 
-    {% endblock contenido %}
+        {% endblock contenido %}
 
 
-    {% block footer %}
+        {% block footer %}
 
-    {% endblock footer %}
+        {% endblock footer %}
+    {% if  user.is_anonymous%}
+    </div>
+    </div>
+    </div>
+    {%endif%}
 
     <script src="{% static "js/vendor/jquery.min.js"%}"></script>
     <script src="{% static "js/vendor/what-input.min.js"%}"></script>

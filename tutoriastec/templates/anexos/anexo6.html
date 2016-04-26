@@ -1,35 +1,80 @@
-{% extends "base/base_anexo.html" %}
+{% extends "base/base_menu.html" %}
 {% load staticfiles %}
-{% block title %}Anexo 6 - Formato de registro{% endblock title %}
+{% block title %}Anexo 6{% endblock title %}
 {% block contenido %}
+
 <section class="row">
-    <form class="" action="#" method="post">{% csrf_token %}
-      {% for field in form %}
-           <div class="item">
-               <div class="callout">
+		<form action="#" method="post">{% csrf_token %}
+			<div class="small-12 columns text-center padding-top show-for-medium-only"><h3>Datos Personales</h3>	 </div>
+			{% for field in Form %}
+			{% if forloop.last%}
+					<div class="medium-6 large-4 columns text-center medium-centered show-for-medium-only">
+						<label>{{ field.label_tag }} <!--{{ forloop.counter }}-->
+						{{ field }}
+						</label>
+						 <span class="error">{{ field.errors }}</span>
+						{% if field.help_text %}
+						<p class="help">{{ field.help_text|safe }}</p>
+						{% endif %}
+					</div>
+			{% endif %}
+			{% if not forloop.last%}
+							<div class="medium-6 large-4 columns text-center show-for-medium-only">
+								<label>{{ field.label_tag }} <!--{{ forloop.counter }}-->
+								{{ field }}
+								</label>
+								 <span class="error">{{ field.errors }}</span>
+								{% if field.help_text %}
+								<p class="help">{{ field.help_text|safe }}</p>
+								{% endif %}
+							</div>
+			 {% endif %}
+			 {% endfor %}
 
-               <label>{{ field.label_tag }}
-               {{ field }}
 
-               </label>
-                <span class="error">{{ field.errors }}</span>
+			 <div class="small-12 columns text-center padding-top hide-for-medium-only"><h3>Datos Personales</h3>
+			 {% for field in Form %}
+			 				<div class="medium-6 large-4 columns text-center">
+			 					<label>{{ field.label_tag }} <!--{{ forloop.counter }}-->
+			 					{{ field }}
+			 					</label>
+			 					 <span class="error">{{ field.errors }}</span>
+			 					{% if field.help_text %}
+			 					<p class="help">{{ field.help_text|safe }}</p>
+			 					{% endif %}
+			 				</div>
+			  {% endfor %}
+				</div>
 
-               {% if field.help_text %}
-               <p class="help">{{ field.help_text|safe }}</p>
-               {% endif %}
+		<div class="small-12 columns text-center padding-top"><h3>Datos Generales</h3></div>
+			 {% for field in Form1 %}
+ 							<div class="medium-6 large-4 columns">
+ 								<label>{{ field.label_tag }} <!--{{ forloop.counter }}-->
+ 								{{ field }}
+ 								</label>
+ 								 <span class="error">{{ field.errors }}</span>
 
-                <div class="row">
-                   <div class="small-6 columns">
-                       <a class=" button round alert expanded prev">Anterior</a>
-                   </div>
-                   <div class="small-6 columns">
-                       <a class="hollow button round success expanded next">Siguiente</a>
-                   </div>
-               </div>
+ 								{% if field.help_text %}
+ 								<p class="help">{{ field.help_text|safe }}</p>
+ 								{% endif %}
+ 							</div>
 
-               </div>
-           </div>
-       {% endfor %}
-    </form>
+ 			 {% endfor %}
+			 <div class="small-12 columns text-center padding-top"><h3>Contacto de Emergencia</h3></div>
+	 			 {% for field in Form2 %}
+	  							<div class="medium-6 large-6 columns">
+	  								<label>{{ field.label_tag }} <!--{{ forloop.counter }}-->
+	  								{{ field }}
+	  								</label>
+	  								 <span class="error">{{ field.errors }}</span>
+
+	  								{% if field.help_text %}
+	  								<p class="help">{{ field.help_text|safe }}</p>
+	  								{% endif %}
+	  							</div>
+
+	  			 {% endfor %}
+		</form>
 </section>
+
 {% endblock contenido %}

@@ -4,14 +4,14 @@ from .models import ContactosEmergencia, DatosGenerales, DatosPersonales
 class ContactosEmergenciaForm(forms.ModelForm):
 	class Meta:
 		model= ContactosEmergencia
-		exclude=["alumno"]
+		exclude=["usuario"]
 
 class DatosGeneralesForm(forms.ModelForm):
 	class Meta:
 		model= DatosGenerales
-		exclude=["telefono"]
+		exclude=["usuario"]
 
 class DatosPersonalesForm(forms.ModelForm):
 	class Meta:
 		model= DatosPersonales
-		exclude=["fecha"]
+		exclude=["usuario","fecha"]

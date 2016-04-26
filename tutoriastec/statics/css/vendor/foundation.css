@@ -2143,8 +2143,8 @@ select {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  width: 20px;
-  height: 16px; }
+  width: 30px;
+  height: 24px; }
   .menu-icon::after {
     content: '';
     position: absolute;

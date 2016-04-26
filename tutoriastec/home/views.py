@@ -41,7 +41,7 @@ def registro(request):
 	f_datos_personales= DatosPersonalesForm()
 	f_datos_generales=DatosGeneralesForm()
 	f_contactos_emergencia=ContactosEmergenciaForm()
-	return render(request,"registro.html",{"nombre":"bitia","Form":f_datos_personales,"Form1":f_datos_generales, "Form2": f_contactos_emergencia})
+	return render(request,"anexos/anexo6.html",{"nombre":"bitia","Form":f_datos_personales,"Form1":f_datos_generales, "Form2": f_contactos_emergencia})
 
 def recovery_passwd(request):
 	return render(request,"recovery_passwd.html",{"nombre":"bitia"})
