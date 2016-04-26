@@ -2,32 +2,34 @@
 from django.forms import ModelForm
 from .models import TestAsertividad
 from django import forms
+from .labels_verbose import etiqueta
 
 class TestAsertividadForm(ModelForm):
+
     CHOICES=(
         ('1','Con Frecuencia'),
         ('2','De vez en cuando'),
         ('3','Casi nunca'),
         ('4','Nunca'),
         )
-    pregunta1=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect, 
-        label="En una reunión dficil, con con un ambiente tenso,soy capaz de hablar con confianza")
+    pregunta1=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
+        label=etiqueta[0])
     pregunta2=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Si no estoy segura de una cosa, puedo pedir ayuda facilmente.")
+        label=etiqueta[1])
     pregunta3=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Si alguna persona es injusta y agresiva, puedo controlar la situacion con confianza.")
+        label=etiqueta[2])
     pregunta4=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="si alguna persona se muestra ironica conmigo o con otras, puedo responder sin agresividad")
+        label=etiqueta[3])
     pregunta5=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Si creo que se esta abusando de mi, soy capaz de denunciarlo sin alterarme.")
+        label=etiqueta[4])
     pregunta6=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Si alguna persona me pide permiso para hacer algo que no me gusta, por ejemplo, fumar, puedo decirle que no sin sentirme culpable")
+        label=etiqueta[5])
     pregunta7=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Si alguna persona pide mi opinion sobre alguna cosa me siento bien dandosela, aunque no concuerde con la de los demas")
+        label=etiqueta[6])
     pregunta8=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Puedo conectar facil y efectivamente con personas que considero importantes")
+        label=etiqueta[7])
     pregunta9=forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect,
-        label="Cuando encuentro defectos en una tienda o restaurante, soy capaz de exponerlos sin atacar a las otras personas y sin sentirme mal")
+        label=etiqueta[8])
     
 
     class Meta:

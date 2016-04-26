@@ -3,8 +3,6 @@ from  django.http  import  HttpResponseRedirect
 from  django.views.generic  import  View
 from .forms import OrgEstudioForm
 # Create your views here.
-
-
 class OrgStudioView(View):
     form_class= OrgEstudioForm
     initial=''

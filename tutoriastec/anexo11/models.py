@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 from core.models import UsuarioModelo
+from .labels_verbose import etiquetas1
 
 class OrganizacionEstudio(UsuarioModelo):
     opc_asertividad=(
@@ -11,45 +12,45 @@ class OrganizacionEstudio(UsuarioModelo):
         ('0','No'),
         )
     pregunta1=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas1")
+            blank=False,max_length=2,verbose_name=etiquetas1[0])
     pregunta2=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas2")
+            blank=False,max_length=2,verbose_name=etiquetas1[1])
     pregunta3=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas3")
+            blank=False,max_length=2,verbose_name=etiquetas1[2])
     pregunta4=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas4") 
+            blank=False,max_length=2,verbose_name=etiquetas1[3]) 
     pregunta5=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas5")
+            blank=False,max_length=2,verbose_name=etiquetas1[4])
     pregunta6=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas6")
+            blank=False,max_length=2,verbose_name=etiquetas1[5])
     pregunta7=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas7")
+            blank=False,max_length=2,verbose_name=etiquetas1[6])
     pregunta8=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas8") 
+            blank=False,max_length=2,verbose_name=etiquetas1[7]) 
     pregunta9=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas9")
+            blank=False,max_length=2,verbose_name=etiquetas1[8])
     pregunta10=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas10")
+            blank=False,max_length=2,verbose_name=etiquetas1[9])
     pregunta11=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas11")
+            blank=False,max_length=2,verbose_name=etiquetas1[10])
     pregunta12=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas12")
+            blank=False,max_length=2,verbose_name=etiquetas1[11])
     pregunta13=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas13")
+            blank=False,max_length=2,verbose_name=etiquetas1[12])
     pregunta14=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas14") 
+            blank=False,max_length=2,verbose_name=etiquetas1[13]) 
     pregunta15=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas15")
+            blank=False,max_length=2,verbose_name=etiquetas1[14])
     pregunta16=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas16")
+            blank=False,max_length=2,verbose_name=etiquetas1[15])
     pregunta17=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas17")
+            blank=False,max_length=2,verbose_name=etiquetas1[16])
     pregunta18=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas18") 
+            blank=False,max_length=2,verbose_name=etiquetas1[17])
     pregunta19=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas19")
+            blank=False,max_length=2,verbose_name=etiquetas1[18])
     pregunta20=models.CharField(choices=opc_asertividad,
-            blank=False,max_length=2,verbose_name="preguntas20")
+            blank=False,max_length=2,verbose_name=etiquetas1[19])
 
     DIAGNOSTICO_OPC=(
         ('0','Muy bajo'),

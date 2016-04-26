@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.db import models
 from django.contrib.auth.models import User
 from django import forms
-# Create your models here.
+from .labels_verbose import etiqueta
+
 class TestAsertividad (models.Model):
 	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 
@@ -15,23 +15,23 @@ class TestAsertividad (models.Model):
 		('4','Nunca'),
 		)
 	pregunta1=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="En una reunión dficil, con con un ambiente tenso,soy capaz de hablar con confianza")
+			blank=False,max_length=2,verbose_name=etiqueta[0])
 	pregunta2=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Si no estoy segura de una cosa, puedo pedir ayuda facilmente.")
+			blank=False,max_length=2,verbose_name=etiqueta[1])
 	pregunta3=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Si alguna persona es injusta y agresiva, puedo controlar la situacion con confianza.")
+			blank=False,max_length=2,verbose_name=etiqueta[2])
 	pregunta4=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="si alguna persona se muestra ironica conmigo o con otras, puedo responder sin agresividad")
+			blank=False,max_length=2,verbose_name=etiqueta[3])
 	pregunta5=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Si creo que se esta abusando de mi, soy capaz de denunciarlo sin alterarme.")
+			blank=False,max_length=2,verbose_name=etiqueta[4])
 	pregunta6=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Si alguna persona me pide permiso para hacer algo que no me gusta, por ejemplo, fumar, puedo decirle que no sin sentirme culpable")
+			blank=False,max_length=2,verbose_name=etiqueta[5])
 	pregunta7=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Si alguna persona pide mi opinion sobre alguna cosa me siento bien dandosela, aunque no concuerde con la de los demas")
+			blank=False,max_length=2,verbose_name=etiqueta[6])
 	pregunta8=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Puedo conectar facil y efectivamente con personas que considero importantes")
+			blank=False,max_length=2,verbose_name=etiqueta[7])
 	pregunta9=models.CharField(choices=opc_asertividad,default ='4',
-			blank=False,max_length=2,verbose_name="Cuando encuentro defectos en una tienda o restaurante, soy capaz de exponerlos sin atacar a las otras personas y sin sentirme mal")
+			blank=False,max_length=2,verbose_name=etiqueta[8])
 	
 	DIAGNOSTICO_OPC=(
 		('1','Paso el Test de asertividad'),
