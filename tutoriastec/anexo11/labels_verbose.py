@@ -22,7 +22,7 @@ etiquetas1=[
 "¿Suele hacerse lento tu estudio debido a que no tienes a la mano los libros y los materiales necesarios?"]
 
 etiquetas2=[
-"¿Tiendes a comenzar la lectura de un libro de texto sin hojear previamente los subtitulos y las instrucciones?"
+"¿Tiendes a comenzar la lectura de un libro de texto sin hojear previamente los subtitulos y las instrucciones?",
 "¿Te saltas por lo general las figuras, graficas y tablas cuando estudias un tema?",
 "¿Suele serte dificil seleccionar los puntoos de los temas de estudio?",
 "¿Te sorprendes con una cierta frecuencia, pensando en algo que no tiene nada que ver con lo que estudias?",
