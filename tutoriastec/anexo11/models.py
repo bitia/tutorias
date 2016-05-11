@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django import forms
 from core.models import UsuarioModelo
 from .labels_verbose import etiquetas1,etiquetas2,etiquetas3
+from django.contrib.postgres.fields import JSONField
 
 class OrganizacionEstudio(UsuarioModelo):
     opc_asertividad=(
@@ -65,6 +66,8 @@ class OrganizacionEstudio(UsuarioModelo):
         )
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
+    
+    comentarios = JSONField()
     def __unicode__(self):
         return "%s "% (self.usuario.username)
 
@@ -126,6 +129,7 @@ class TecnicasEstudio(UsuarioModelo):
         )
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
+    comentarios = JSONField()
     def __unicode__(self):
         return "%s "% (self.usuario.username)
 
@@ -189,5 +193,7 @@ class MotivacionEstudio(UsuarioModelo):
         )
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
+
+    comentarios = JSONField()
     def __unicode__(self):
         return "%s "% (self.usuario.username)

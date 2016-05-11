@@ -1,10 +1,12 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.postgres.fields import JSONField
+from core.models import UsuarioModelo
 
 # Create your models here.
-class FormatoEntrevista(models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+class FormatoEntrevista(UsuarioModelo):
+	
 	#nombre anexo6/models.py/Datosgenerales
 	estatura = models.FloatField()
 	peso = models.FloatField()
@@ -74,9 +76,10 @@ class FormatoEntrevista(models.Model):
 		)
 	prescripcion_medica_cuales=models.CharField(choices=prescripcion_medica_cuales_opc,
 			max_length=50)
+	comentarios= JSONField()
 
 
-class EstadoPsicofisiologicos(models.Model):
+class EstadoPsicofisiologicos(UsuarioModelo):
 
 		opc_123 =(
 		('1',"Muy frecuente"),
@@ -106,9 +109,10 @@ class EstadoPsicofisiologicos(models.Model):
 		tartamudeo=models.CharField(choices=opc_123,default="5",
 			max_length=50)
 		observaciones_higiene = models.TextField()
+		comentarios= JSONField()
 		
 
-class DatosHermanos(models.Model):
+class DatosHermanos(UsuarioModelo):
 	nombre = models.CharField(max_length=50)
 	fecha_nacimiento = models.DateField()
 	
@@ -142,10 +146,9 @@ class DatosHermanos(models.Model):
 	actitud_con_hermano=models.CharField(choices=relacion_opc,
 			default='2',max_length=50)
 
-	alumno = models.ForeignKey(FormatoEntrevista,on_delete=models.CASCADE)
-
-class AreaIntegracion(models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+	
+class AreaIntegracion(UsuarioModelo):
+	
 	relacion_opc = (
 		('1',"Muy buena"),
 		('2',"Buena"),
@@ -181,7 +184,7 @@ class AreaIntegracion(models.Model):
 	ocupa_educacion = models.CharField(max_length=50)
 	influido_estudiar = models.CharField(max_length=50)
 	otro_inf_familiar = models.TextField(blank=True)
-#  :::::::::::::::::::::::::::::::::::::::::::integracion socia	
+#  :::::::::::::::::::::::::::::::::::::::::::integracion social
 	relacion_con_companeros=models.CharField(choices=relacion_opc,
 			default='2',max_length=50)
 
@@ -205,9 +208,10 @@ class AreaIntegracion(models.Model):
 
 	tiempo_libre = models.CharField(max_length=50,default="")
 	act_recreativa = models.CharField(max_length=50,default="")
+	comentarios=JSONField()
 
-class CaracteristicasPersonales(models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+class CaracteristicasPersonales(UsuarioModelo):
+
 	opc_caracteristicas = (
 		('1',"No"),
 		('2',"Poco"),
@@ -264,9 +268,11 @@ class CaracteristicasPersonales(models.Model):
 			default='1',max_length=50)
 	independiente = models.CharField(choices=opc_caracteristicas,
 			default='1',max_length=50)
+	comentarios=JSONField()
+
 	
-class AreaPsicopedagogica(models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+class AreaPsicopedagogica(UsuarioModelo):
+	
 	gustaria_ser = models.CharField(max_length=50,blank=False)
 	ayuda_casa_tareas = models.CharField(max_length=50,blank=False)
 	problemas_intervienen = models.CharField(max_length=50,blank=False)
@@ -297,9 +303,10 @@ class AreaPsicopedagogica(models.Model):
 	asignaturas_reprovadas=models.CharField(choices=asignaturas_reprovadas_opc,
 			default='no',max_length=50)	
 	asig_reprovadas = models.CharField(max_length=50,blank= True)
+	comentarios=JSONField()
 
-class PlanDeVida (models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
+class PlanDeVida (UsuarioModelo):
+	
 	planes_inmediatos = models.TextField(blank= False)
 	metas_vida = models.TextField(blank= False)
 	#caracteristcaspersonales 
@@ -309,6 +316,7 @@ class PlanDeVida (models.Model):
 	aspiro_a_que = models.TextField(blank= False)
 	miedo_aque = models.TextField(blank= False)
 	podre_lograr_que = models.TextField(blank= False)
+	comentarios=JSONField()
 
 
 

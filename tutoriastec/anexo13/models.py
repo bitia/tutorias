@@ -4,10 +4,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 from .labels_verbose import etiqueta
+from django.contrib.postgres.fields import JSONField
+from core.models import UsuarioModelo
 
-class TestAsertividad (models.Model):
-	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
-
+class TestAsertividad (UsuarioModelo):
 	opc_asertividad=(
 		('1','Con Frecuencia'),
 		('2','De vez en cuando'),
@@ -39,12 +39,8 @@ class TestAsertividad (models.Model):
 		)
 	diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
 			blank=True,max_length=2)
-
+	comentarios = JSONField()
 
 	def __unicode__(self):
 		return "%s "% (self.usuario.username)
 
-class Comentarios(models.Model):
-	tutorado = models.ForeignKey(User,related_name='+',blank=True)
-	tutor= models.ForeignKey(User,related_name='+',blank=True)
-	comentario = models.TextField()
