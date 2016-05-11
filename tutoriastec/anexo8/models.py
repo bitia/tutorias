@@ -76,7 +76,7 @@ class FormatoEntrevista(UsuarioModelo):
 		)
 	prescripcion_medica_cuales=models.CharField(choices=prescripcion_medica_cuales_opc,
 			max_length=50)
-	comentarios= JSONField()
+	comentarios= JSONField(default={})
 
 
 class EstadoPsicofisiologicos(UsuarioModelo):
@@ -109,7 +109,7 @@ class EstadoPsicofisiologicos(UsuarioModelo):
 		tartamudeo=models.CharField(choices=opc_123,default="5",
 			max_length=50)
 		observaciones_higiene = models.TextField()
-		comentarios= JSONField()
+		comentarios= JSONField(default={})
 		
 
 class DatosHermanos(UsuarioModelo):
@@ -208,7 +208,7 @@ class AreaIntegracion(UsuarioModelo):
 
 	tiempo_libre = models.CharField(max_length=50,default="")
 	act_recreativa = models.CharField(max_length=50,default="")
-	comentarios=JSONField()
+	comentarios=JSONField(default={})
 
 class CaracteristicasPersonales(UsuarioModelo):
 
@@ -268,7 +268,7 @@ class CaracteristicasPersonales(UsuarioModelo):
 			default='1',max_length=50)
 	independiente = models.CharField(choices=opc_caracteristicas,
 			default='1',max_length=50)
-	comentarios=JSONField()
+	comentarios=JSONField(default={})
 
 	
 class AreaPsicopedagogica(UsuarioModelo):
@@ -303,7 +303,7 @@ class AreaPsicopedagogica(UsuarioModelo):
 	asignaturas_reprovadas=models.CharField(choices=asignaturas_reprovadas_opc,
 			default='no',max_length=50)	
 	asig_reprovadas = models.CharField(max_length=50,blank= True)
-	comentarios=JSONField()
+	comentarios=JSONField(default={})
 
 class PlanDeVida (UsuarioModelo):
 	
@@ -316,7 +316,7 @@ class PlanDeVida (UsuarioModelo):
 	aspiro_a_que = models.TextField(blank= False)
 	miedo_aque = models.TextField(blank= False)
 	podre_lograr_que = models.TextField(blank= False)
-	comentarios=JSONField()
+	comentarios=JSONField(default={})
 
 
 

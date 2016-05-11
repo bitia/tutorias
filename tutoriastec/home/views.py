@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from anexo6.forms import ContactosEmergenciaForm, DatosGeneralesForm, DatosPersonalesForm
+from anexo6.forms import DatosGeneralesForm, DatosPersonalesForm
 from django.contrib.auth import authenticate,logout
 from django.contrib.auth import login as login_auth
 from django.http import HttpResponseRedirect as redirect

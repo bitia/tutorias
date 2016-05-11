@@ -122,7 +122,7 @@ class DatosGenerales(UsuarioModelo):
 
 	nom_trabajo_padre = models.CharField(max_length=50,default="")
 	nom_trabajo_madre = models.CharField(max_length=50,default="")
-	ContactosEmergencia= JSONField()
+	ContactosEmergencia= JSONField(default={})
 
 #class ContactosEmergencia (models.Model):
 #	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
