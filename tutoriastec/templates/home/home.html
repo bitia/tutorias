@@ -1,4 +1,5 @@
 {% extends "base/base_menu.html" %}
+{% load staticfiles %}
 {% block title %} Bienvenido al sistema de tutorias{% endblock title %}
 {% block contenido %}
     <h1>Bienvenido a tu Home</h1>
@@ -8,5 +9,43 @@
     <h3>Progreso de los Anexos</h3>
   </div>
 </section>
+
+<section class="row">
+  <article class="medium-8 medium-centered columns">
+    <canvas id="myChart" width="500" height="300"></canvas>
+  </article>
+</section>
+
+<script src="{% static "node_modules/chart.js/dist/Chart.js" %}"></script>
+    <script>
+    var ctx = document.getElementById("myChart");
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Desde Nacimiento", "5 años", "10 años", "15 años", "20 años o más"],
+            datasets: [{
+                label: 'Valoracion',
+                data: [12, -9, 3, 5, -3],
+                fill: false,
+                pointBorderColor : ["green","blue","orange","red","yellow"],
+                pointBackgroundColor : ["green","blue","orange","red","yellow"],
+
+                pointRadius: 10,
+                pointStyle : ["star","line","rectRot","cross"]
+
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                    }
+                }]
+            }
+        }
+    });
+    </script>
 
 {% endblock contenido %}

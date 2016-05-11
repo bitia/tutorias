@@ -14,7 +14,7 @@
     {% endblock mascss %}
   </head>
   <body>
-    {% if not user.is_anonymous%}
+    {% if not user.is_anonymous and not user.is_staff%}
     <div class="off-canvas-wrapper">
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
       <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
@@ -29,12 +29,12 @@
         </div>
       </section>
         <ul>
-          <li class="padding-top"><i class="it-home"></i><a href="#">  Home</a></li>
-          <li class="padding-top"><i class="it-profile"></i><a href="#">  Perfil</a></li>
-          <li class="padding-top"><i class="it-books"></i><a href="#">  Anexos</a></li>
+          <li class="padding-top"><i class="it-home"></i><a href="/home">  Home</a></li>
+          <li class="padding-top"><i class="it-profile"></i><a href="/alumno/perfil">  Perfil</a></li>
+          <li class="padding-top"><i class="it-books"></i><a href="/anexos">  Anexos</a></li>
           <li class="padding-top"><i class="it-user"></i><a href="#">  Actividades</a></li>
           <li class="padding-top"><i class="it-user"></i><a href="#">  Ayuda</a></li>
-          <li class="padding-top"><i class="it-switch"></i><a href="#">  Cerrar Sesión</a></li>
+          <li class="padding-top"><i class="it-switch"></i><a href="/log_out">  Cerrar Sesión</a></li>
           <li class="padding-top"><i class="it-phone"></i><a href="#">  Contacto</a></li>
         </ul>
       </ul>
@@ -67,9 +67,11 @@
     {% block masjs %}
 
     {% endblock masjs %}
+
     <script>
       $(document).foundation();
     </script>
+
     {% block scriptjs %}
 
     {% endblock scriptjs %}
