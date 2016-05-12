@@ -37,9 +37,10 @@ class TestAsertividad (UsuarioModelo):
 		('1','Paso el Test de asertividad'),
 		('0','No paso el Test de asertividad'),
 		)
+	
 	diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
 			blank=True,max_length=2)
-	comentarios = JSONField(default={})
+	comentarios = JSONField(null=True,blank=True,default={})
 
 	def __unicode__(self):
 		return "%s "% (self.usuario.username)

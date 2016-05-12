@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'tutoriastec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tutoriadb',
+        'NAME': 'tutoriasdb',
         'USER': 'bitia',
         'PASSWORD': 'admin1234',
         'HOST': 'localhost',
