@@ -9,7 +9,5 @@ class AnexoItem(models.Model):
     url = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=50, blank=True)
     imagen = models.ImageField(blank=True)
-    des_imagen = models.CharField(max_length=50, blank=True)
     num_formularios = models.IntegerField()
     
-
