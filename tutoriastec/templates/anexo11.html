@@ -2,8 +2,8 @@
 {% load staticfiles %}
 {% block title %}Anexo 11{% endblock title %}
 {% block contenido %}
-    <div class="container">
-      <div class="row">
+    <div class="row">
+      <div class="small-12 columns">
         <form method="POST" action=".">{% csrf_token %}
           {{ form.as_p }}
             <input class="button success"  type="submit" value="enviar datos">
