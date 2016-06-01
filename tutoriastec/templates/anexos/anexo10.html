@@ -1,0 +1,74 @@
+{% extends "base/base_anexo.html" %}
+{% load staticfiles %}
+{% block title %}Anexo 10{% endblock title %}
+{% block contenido %}
+    
+        <div class="row">
+            <form method="POST" action="/anexo10/fortalezas_vista" id ='test'>{% csrf_token %}
+               <fieldset class="medium-6 columns">
+                <legend>fortalezas</legend>
+                {% for key,value in fort.items %}
+                <input id="checkboxA{{forloop.counter}}" type="checkbox" name="{{key}}" value="{{key}}"><label for="checkboxA{{forloop.counter}}">{{value}}</label>
+                {% endfor %}
+                </fieldset>
+                <fieldset class="medium-6 columns">
+                <legend>oportunidades</legend>
+                {% for key,value in opor.items %}
+                <input id="checkboxB{{forloop.counter}}" type="checkbox" name="{{key}}" value="{{key}}"><label for="checkboxB{{forloop.counter}}">{{value}}</label>
+                {% endfor %}
+                </fieldset>
+                <fieldset class="medium-6 columns">
+                <legend>debilidaades</legend>
+                {% for key,value in debi.items %}
+                <input id="checkboxC{{forloop.counter}}" type="checkbox" name="{{key}}"value="{{key}}"><label for="checkboxC{{forloop.counter}}">{{value}}</label>
+                {% endfor %}
+                </fieldset>
+                <fieldset class="medium-6 columns">
+                <legend>Amenazas</legend>
+                {% for key,value in amen.items %}
+                <input id="checkboxD{{forloop.counter}}" type="checkbox" name="{{key}}" value="{{key}}"><label for="checkboxD{{forloop.counter}}">{{value}}</label>
+                {% endfor %}
+                </fieldset>
+               
+                <div id = 'message'>Escoge todo lo que tengas en cada caso</div>
+                <input class="button success"  type="submit" value="Enviar datos">
+            </form>
+        </div>
+
+
+{% endblock contenido %}
+{% block scriptjs %}
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var datos={
+    "fortalezas": ["optimista", "trabajador", "participativo"],
+    "oportunidades": ["reir", "juego"],
+    "debilidades": ["apatia", "chicos"],
+    "Amenazas": ["Falta de experiencia", "Dejades"]
+}.serialize();
+           
+$('#test').submit(function(){ //en el evento submit del fomulario
+              event.preventDefault();  //detenemos el comportamiento por default
+ 
+              var url = $(this).attr('action');  //la url del action del formulario
+              var datos = $(this).serialize(); // los datos del formulario
+              $.ajax({
+                  type: 'POST',
+                  url: url,
+                  data: datos,
+                  beforeSend: mostrarLoader, //funciones que definimos más abajo
+                  success: mostrarRespuesta  //funciones que definimos más abajo
+               });
+ 
+          }); 
+
+    function mostrarLoader(){
+              console.log("iniciando ajax");
+        };
+        function mostrarRespuesta (responseText){
+              console.log("terminando ajax");
+        }; 
+
+    });
+</script>
+{% endblock scriptjs %}

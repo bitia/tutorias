@@ -11,8 +11,7 @@ class Foda(UsuarioModelo):
     debilidad = JSONField(null=True,blank=True,default={})
     amenaza = JSONField(null=True,blank=True,default={})
     comentario = JSONField(null=True,blank=True,default={})
-
-
+    
     def __unicode__(self):
         return "%s "% (self.usuario.username)
 

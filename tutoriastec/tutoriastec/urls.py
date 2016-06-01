@@ -1,4 +1,5 @@
-"""tutoriastec URL Configuration
+"""
+tutoriastec URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -20,7 +21,6 @@ import home
 import anexo11
 import listaanexos
 import anexo6
-
 urlpatterns = [
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^anexos/', include('listaanexos.urls')),
     url(r'^anexo11/', include('anexo11.urls')),
     url(r'^anexo6/', include('anexo6.urls')),
-    
+    url(r'^anexo10/', include('anexo10.urls')),
 ]
