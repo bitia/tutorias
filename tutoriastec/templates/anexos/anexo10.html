@@ -1,74 +1,212 @@
-{% extends "base/base_anexo.html" %}
+{% extends "base/base_menu.html" %}
 {% load staticfiles %}
-{% block title %}Anexo 10{% endblock title %}
+{% block title %}Anexo 10 - FODA{% endblock title %}
 {% block contenido %}
-    
-        <div class="row">
-            <form method="POST" action="/anexo10/fortalezas_vista" id ='test'>{% csrf_token %}
-               <fieldset class="medium-6 columns">
-                <legend>fortalezas</legend>
-                {% for key,value in fort.items %}
-                <input id="checkboxA{{forloop.counter}}" type="checkbox" name="{{key}}" value="{{key}}"><label for="checkboxA{{forloop.counter}}">{{value}}</label>
-                {% endfor %}
-                </fieldset>
-                <fieldset class="medium-6 columns">
-                <legend>oportunidades</legend>
-                {% for key,value in opor.items %}
-                <input id="checkboxB{{forloop.counter}}" type="checkbox" name="{{key}}" value="{{key}}"><label for="checkboxB{{forloop.counter}}">{{value}}</label>
-                {% endfor %}
-                </fieldset>
-                <fieldset class="medium-6 columns">
-                <legend>debilidaades</legend>
-                {% for key,value in debi.items %}
-                <input id="checkboxC{{forloop.counter}}" type="checkbox" name="{{key}}"value="{{key}}"><label for="checkboxC{{forloop.counter}}">{{value}}</label>
-                {% endfor %}
-                </fieldset>
-                <fieldset class="medium-6 columns">
-                <legend>Amenazas</legend>
-                {% for key,value in amen.items %}
-                <input id="checkboxD{{forloop.counter}}" type="checkbox" name="{{key}}" value="{{key}}"><label for="checkboxD{{forloop.counter}}">{{value}}</label>
-                {% endfor %}
-                </fieldset>
-               
-                <div id = 'message'>Escoge todo lo que tengas en cada caso</div>
-                <input class="button success"  type="submit" value="Enviar datos">
-            </form>
-        </div>
+<section class="row">
+  <article class="small-6 columns medium-6 text-center callout padding-top">
+    <a data-open="Fortalezas">
+      <img src="{% static "img/foda/fortalezas.png" %}" alt=""  height="200" width="200"/>
+      <h2>Fortalezas</h2>
+    </a>
+  </article>
+  <article class="small-6 columns medium-6 text-center callout padding-top">
+  <a data-open="Oportunidades">
+    <img src="{% static "img/foda/oportunidades.png" %}" alt="" height="200" width="200" />
+    <h2>Oportunidades</h2>
+  </a>
+  </article>
+  <article class="small-6 columns medium-6 text-center callout padding-top">
+  <a data-open="Debilidades">
+    <img src="{% static "img/foda/debilidades.png" %}" alt=""  height="200" width="200"/>
+    <h2>Debilidades</h2>
+  </a>
+  </article>
+  <article class="small-6 columns medium-6 text-center callout padding-top">
+  <a data-open="Amenazas">
+    <img src="{% static "img/foda/amenazas.png" %}" alt=""  height="200" width="200"/>
+    <h2>Amenazas</h2>
+  </a>
+  </article>
+</section>
 
+<section class="large reveal" id="Fortalezas" data-reveal>
+  <fieldset class="fieldset">
+    <h1>Fortalezas</h1>
+    <p class="lead">Selecciona las casillas de las fortalezas que tienes.</p>
+    <section class="row">
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">Puntual</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox2" type="checkbox"><label for="checkbox2">Estudio</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox3" type="checkbox"><label for="checkbox3">Iniciativa</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox4" type="checkbox"><label for="checkbox4">Conocimientos</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox5" type="checkbox"><label for="checkbox5">Constante</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns   ">
+        <input id="checkbox6" type="checkbox"><label for="checkbox6">Optimista</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox7" type="checkbox"><label for="checkbox7">Responsable</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox8" type="checkbox"><label for="checkbox8">Perseverante</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox9" type="checkbox"><label for="checkbox9">Valores bien fundamentados</label>
+      </article>
+      <article class="small-6 medium-12 large-12 columns   ">
+        <input id="checkbox10" type="checkbox"><label for="checkbox10">Particitivo(a)</label>
+      </article>
+    </section>
+    <button type="button" name="button" class="button">Guardar Datos</button>
+  </fieldset>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</section>
+
+<section class="large reveal" id="Oportunidades" data-reveal>
+  <fieldset class="fieldset">
+    <h1>Oportunidades</h1>
+    <p class="lead">Selecciona las casillas de las oportunidades que tienes.</p>
+    <section class="row">
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">Ser puntual</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox2" type="checkbox"><label for="checkbox2">Desarrollo personal</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox3" type="checkbox"><label for="checkbox3">Conocimientos técnicos</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox4" type="checkbox"><label for="checkbox4">Conocimientos básicos</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox5" type="checkbox"><label for="checkbox5">Adquirir habilidades</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns   ">
+        <input id="checkbox6" type="checkbox"><label for="checkbox6">Aprobar mis materias</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox7" type="checkbox"><label for="checkbox7">Estudiar</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox8" type="checkbox"><label for="checkbox8">Sacar una beca</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox9" type="checkbox"><label for="checkbox9">Aumentar circulo social</label>
+      </article>
+      <article class="small-6 medium-12 large-12 columns   ">
+        <input id="checkbox10" type="checkbox"><label for="checkbox10">Fortalecer mis valores</label>
+      </article>
+    </section>
+    <button type="button" name="button" class="button">Guardar Datos</button>
+  </fieldset>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</section>
+
+<section class="large reveal" id="Debilidades" data-reveal>
+  <fieldset class="fieldset">
+    <h1>Debilidades</h1>
+    <p class="lead">Selecciona las casillas de las debilidades que tienes.</p>
+    <section class="row">
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox1" type="checkbox"><label for="checkbox1">Distraido</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox2" type="checkbox"><label for="checkbox2">Enojón</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox3" type="checkbox"><label for="checkbox3">Impuntual</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox4" type="checkbox"><label for="checkbox4">Vicios</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox5" type="checkbox"><label for="checkbox5">Impulsivo</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns   ">
+        <input id="checkbox6" type="checkbox"><label for="checkbox6">Dominante</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox7" type="checkbox"><label for="checkbox7">Inseguro</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox8" type="checkbox"><label for="checkbox8">No Reflexivo</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox9" type="checkbox"><label for="checkbox9">No conocimientos</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns   ">
+        <input id="checkbox10" type="checkbox"><label for="checkbox10">Sumiso</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox11" type="checkbox"><label for="checkbox11">Agresivo</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Confiado</label>
+      </article>
+    </section>
+    <button type="button" name="button" class="button">Guardar Datos</button>
+  </fieldset>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</section>
+
+<section class="large reveal" id="Amenazas" data-reveal>
+  <fieldset class="fieldset">
+    <h1>Amenazas</h1>
+    <p class="lead">Selecciona las casillas de las amenazas que tienes.</p>
+    <section class="row">
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Enamorarme</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Vicios</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">No concentrarme</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Dejadez</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Deporte</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns   ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Enfermedad</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Enfermedad de un familiar</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">No contar con recursos</label>
+      </article>
+      <article class="small-6 medium-6 large-4 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">No saber otro idioma</label>
+      </article>
+      <article class="small-6 medium-12 large-12 columns  ">
+        <input id="checkbox12" type="checkbox"><label for="checkbox12">Problemas de salud</label>
+      </article>
+    </section>
+    <button type="button" name="button" class="button">Guardar Datos</button>
+  </fieldset>
+
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</section>
 
 {% endblock contenido %}
-{% block scriptjs %}
-    <script type="text/javascript">
-    $(document).ready(function() {
-        var datos={
-    "fortalezas": ["optimista", "trabajador", "participativo"],
-    "oportunidades": ["reir", "juego"],
-    "debilidades": ["apatia", "chicos"],
-    "Amenazas": ["Falta de experiencia", "Dejades"]
-}.serialize();
-           
-$('#test').submit(function(){ //en el evento submit del fomulario
-              event.preventDefault();  //detenemos el comportamiento por default
- 
-              var url = $(this).attr('action');  //la url del action del formulario
-              var datos = $(this).serialize(); // los datos del formulario
-              $.ajax({
-                  type: 'POST',
-                  url: url,
-                  data: datos,
-                  beforeSend: mostrarLoader, //funciones que definimos más abajo
-                  success: mostrarRespuesta  //funciones que definimos más abajo
-               });
- 
-          }); 
-
-    function mostrarLoader(){
-              console.log("iniciando ajax");
-        };
-        function mostrarRespuesta (responseText){
-              console.log("terminando ajax");
-        }; 
-
-    });
-</script>
-{% endblock scriptjs %}
+>>>>>>> 78bcf12b9a6bfa46902aeb61199dfe29acb31bf6

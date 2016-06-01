@@ -4,15 +4,16 @@
 <section id="main-header" class="row">
         <header class="medium-6 medium-centered columns text-center">
             <div class="callout">
-                <h1>Hello, {{user.username}}! </h1>
+                <h1>Anexo 13 </h1>
                 <h2>Test Asertividad</h2>
+                <h3>Alumno: {{user.username}}</h3>
             </div>
         </header>
     </section>
 
 <section class="row">
-        <div class="medium-6 medium-centered columns" >
-            <form action="./hola" method="post">{% csrf_token %}
+        <div class="medium-6 medium-centered large-12 columns" >
+            <form class="ac-custom ac-radio ac-fill" autocomplete="off" action="./hola" method="post">{% csrf_token %}
                 <h3>Bienvenido al formulario</h3>
                 <div id="owl-form" class="owl-carousel owl-theme" >
 

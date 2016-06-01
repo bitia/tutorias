@@ -2,10 +2,13 @@
 {% load staticfiles %}
 {% block title %} Bienvenido al sistema de tutorias{% endblock title %}
 {% block contenido %}
-    <h1>Bienvenido a tu Home</h1>
+
 <section class="row">
   <div class="small-12 medium-6 large-4 medium-centered large-centered columns padding-top">
+    <h1>Bienvenido a tu Página Principal</h1>
+    <br>
     <h3>Actividades Pendientes</h3>
+    <br>
     <h3>Progreso de los Anexos</h3>
   </div>
 </section>
@@ -23,7 +26,7 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["Desde Nacimiento", "5 años", "10 años", "15 años", "20 años o más"],
+            labels: ["Desde Nacimiento", "5 años", "5 años", "5 años", "20 años o más"],
             datasets: [{
                 label: 'Valoracion',
                 data: [12, -9, 3, 5, -3],

@@ -9,7 +9,7 @@ class DatosPersonalesCreateView(CreateView):
     form=DatosPersonalesForm
 
     def get_form(self, data=None, files=None, **kwargs):
-        user = self.request.user            
+        user = self.request.user
         return form(data, files, owner=user, **kwargs)
 
     def form_valid(self, form):
@@ -39,7 +39,7 @@ class EditDatos(UpdateView):
         self.form.save()
         return super(DatosPersonalesCreateView, self).form_valid(form)
 
-        
+
 class DatosPersonalesUpDateView(UpdateView):
     model = DatosPersonales
     form=DatosPersonalesForm
