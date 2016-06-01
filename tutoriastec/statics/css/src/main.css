@@ -10,6 +10,7 @@
 }
 body, h1, h2, h3, h4, h5, h6, p {
   font-family: OpenSans,"Helvetica Neue", Helvetica, sans-serif;
+  background-color: #fafafa;
 }
 ul{
     margin:0;
@@ -34,7 +35,7 @@ ul{
 }
 
 a{
-  color: #3adb76;
+  color: #1585cf;
 }
 
 .avatar-container {
