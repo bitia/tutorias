@@ -25,15 +25,15 @@
 						{% endif %}
 
 						{% if not user.is_staff and not user.is_anonymous%}
-						<li><a href="/alumno/perfil" title="Perfil"><i class="it-user"> Perfil</i></a></li>
+						<li><a class="menu-texto" href="/alumno/perfil" title="Perfil"><i class="it-user"> Perfil</i></a></li>
             <li>
-              <a href="/anexos/" title="Anexos"><i class="it-file-text2"> Anexos</i></a>
+              <a class="menu-texto" href="/anexos/" title="Anexos"><i class="it-file-text2"> Anexos</i></a>
             </li>
-            <li><a href="/alumno/perfil" title="Actividades"><i class="it-checkmark"> Actividades</i></a></li>
-						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"> Cerrar Sesión</i></a></li>
+            <li><a class="menu-texto" href="/actividades/" title="Actividades"><i class="it-checkmark"> Actividades</i></a></li>
+						<li><a class="menu-texto" href="/log_out" title="Cerrar Sesión"><i class="it-switch"> Cerrar Sesión</i></a></li>
 						{% endif %}
 
-			      <li><a href="/contacto"><i class="it-phone"> Contacto</i></a></li>
+			      <li><a class="menu-texto" href="/contacto"><i class="it-phone"> Contacto</i></a></li>
 			    </ul>
 			  </nav>
 			</section>
