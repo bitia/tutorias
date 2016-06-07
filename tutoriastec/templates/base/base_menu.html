@@ -1,16 +1,15 @@
-{% extends "base/basefn.html" %}
+{% extends "base/base_2.html" %}
 {% load staticfiles %}
 {% block header %}
-<div data-sticky-container class="show-for-medium">
-  <div class="title-bar" data-sticky data-options="marginTop:0.001;" style="width:100%; background:white; color:black;">
-		<header>
+
+		<header class="show-for-medium">
 			<section class="logotec text-center">
 				<img src="{% static "img/logos/header2016.jpg"%}">
 			</section>
 			<section class="top-bar">
 			  <nav class="top-bar-left">
 			    <ul class="menu" data-dropdown-menu>
-			      <li class="menu-text"><i id="menutec" class="menu-icon" data-toggle="offCanvas"></i>  Tutorias TECNM</li>
+			      <li class="menu-text"></i>  Tutorias TECNM</li>
 			    </ul>
 			  </nav>
 			  <nav class="top-bar-right">
@@ -21,16 +20,20 @@
 						{% endif %}
 
 						{% if user.is_staff%}
-						<li><a href="/admin" title="Admin"><i class="it-user-tie"></i></a></li>
-						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i></a></li>
+						<li><a href="/admin" title="Admin"><i class="it-user-tie"> Administrador</i></a></li>
+						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"> Cerrar Sesión</i></a></li>
 						{% endif %}
 
 						{% if not user.is_staff and not user.is_anonymous%}
-						<li><a href="/alumno/perfil" title="Perfil"><i class="it-user"></i></a></li>
-						<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i></a></li>
+						<li><a class="menu-texto" href="/alumno/perfil" title="Perfil"><i class="it-user"> Perfil</i></a></li>
+            <li>
+              <a class="menu-texto" href="/anexos/" title="Anexos"><i class="it-file-text2"> Anexos</i></a>
+            </li>
+            <li><a class="menu-texto" href="/actividades/" title="Actividades"><i class="it-checkmark"> Actividades</i></a></li>
+						<li><a class="menu-texto" href="/log_out" title="Cerrar Sesión"><i class="it-switch"> Cerrar Sesión</i></a></li>
 						{% endif %}
 
-			      <li><a href="/contacto"><i class="it-phone"></i></a></li>
+			      <li><a class="menu-texto" href="/contacto"><i class="it-phone"> Contacto</i></a></li>
 			    </ul>
 			  </nav>
 			</section>
@@ -45,14 +48,14 @@
 	<section class="top-bar">
 		<nav class="top-bar-left">
 			<ul class="menu" data-dropdown-menu>
-				<li class="menu-text"><i id="menutec" class="menu-icon" data-toggle="offCanvas"></i>  Tutorias TECNM</li>
+				<li class="menu-text"> Tutorias TECNM</li>
 			</ul>
 		</nav>
 		<nav class="top-bar-right">
 			<ul class="menu">
 
 				{% if  user.is_anonymous%}
-				<li><a href="/login" title="Acceder">Acceder</a></li>
+				<li><a href="/login" title="Acceder"></a></li>
 				{% endif %}
 
 				{% if user.is_staff%}
@@ -62,6 +65,8 @@
 
 				{% if not user.is_staff and not user.is_anonymous%}
 				<li><a href="/alumno/perfil" title="Perfil"><i class="it-user"></i></a></li>
+        <li><a href="/anexos/" title="Anexos"><i class="it-file-text2"></i></a></li>
+        <li><a href="/alumno/perfil" title="Actividades"><i class="it-checkmark"></i></a></li>
 				<li><a href="/log_out" title="Cerrar Sesión"><i class="it-switch"></i></a></li>
 				{% endif %}
 

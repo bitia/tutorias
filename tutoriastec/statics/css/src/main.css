@@ -34,7 +34,7 @@ ul{
 }
 
 a{
-  color: #3adb76;
+  color: #1585cf;
 }
 
 .avatar-container {
@@ -85,6 +85,14 @@ a{
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+}
+
+
+.menu-texto{
+  text-rendering: optimizeLegibility;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 19px;
+  margin-bottom: 0.5rem;
 }
 
 /**
