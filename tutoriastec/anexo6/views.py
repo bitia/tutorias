@@ -1,47 +1,26 @@
 from django.shortcuts import render
 from .forms import DatosPersonalesForm
-from .models import DatosPersonales, DatosGenerales
-from vanilla import ListView, DetailView, CreateView, UpdateView
-from django.core.urlresolvers import reverse_lazy
+from .models import DatosPersonales
+from  django.views.generic  import  View
 
-class DatosPersonalesCreateView(CreateView):
-    model = DatosPersonales
-    form=DatosPersonalesForm
-
-    def get_form(self, data=None, files=None, **kwargs):
-        user = self.request.user
-        return form(data, files, owner=user, **kwargs)
-
-    def form_valid(self, form):
-        send_activation_email(self.request.user)
-        account = form.save()
-        return HttpResponseRedirect(account.account_activated_url())
-"""
-class ListDatos(ListView):
-    model = DatosPersonales
-
-class CreateDatos(CreateView):
-    model = DatosPersonales
-    success_url = reverse_lazy('nuevo')
-
-class EditDatos(UpdateView):
-    model = DatosPersonales
-    success_url = reverse_lazy('modificar')
-
-    DatosPersonalesCreateView(CreateView):
-    model=DatosPersonales
-    form=DatosPersonalesForm
-    fields = ('carrera','numero_control','semestre','fecha')
-
-    def form_valid(self,form):
-        self.form=self.form.save()
-        self.form.usuario=self.request.user
-        self.form.save()
-        return super(DatosPersonalesCreateView, self).form_valid(form)
-
-
-class DatosPersonalesUpDateView(UpdateView):
-    model = DatosPersonales
-    form=DatosPersonalesForm
-    fields = ['usuario','carrera','numero_control','semestre','fecha']
-    """
+class Anexo6View(View):
+    form_class=DatosPersonalesForm
+    initial=''
+    errores=[]
+    template_name = 'anexo6/anexo6Parte1.html'
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form': form})
+    def post(self, request):
+        form = self.form_class(request.POST)
+        usuario=request.user
+        if form.is_valid():
+            form=form.save()
+            form.usuario=usuario
+            form.save()
+            return HttpResponseRedirect("/anexo13/gracias/")
+        else:
+            self.errores.append(form.errors)
+            print ("No es valido el formulario")
+            print(self.errores)
+            return render(request, self.template_name, {'form': form})

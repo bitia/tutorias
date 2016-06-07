@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'anexo11',
     'anexo10',
     'debug_toolbar',
+    'rest_framework',
 
 ]
 
