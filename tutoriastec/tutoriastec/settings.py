@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'anexo10',
     'debug_toolbar',
     'rest_framework',
+    'import_export',
+    'alumno',
 
 ]
 

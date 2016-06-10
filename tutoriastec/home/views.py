@@ -12,6 +12,8 @@ def home(request):
 	return render(request,"home/home.html",{})
 
 def inicio(request):
+    if request.user.is_authenticated():
+        return redirect("/home/")
     return render(request,"base.html",{})
 
 def login(request):
