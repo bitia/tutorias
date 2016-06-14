@@ -9,10 +9,25 @@ from core.models import UsuarioModelo
 class DatosPersonales(UsuarioModelo):
 	carrera = models.CharField(max_length=30)
 	numero_control= models.CharField(max_length=50)
-	semestre = models.IntegerField()
+#	for num in range(1,13):
+#		semestre_opc.append(num)
+	semestre_opc=(
+		('1',"1"),
+		('2',"2"),
+		('3',"3"),
+		('4',"4"),
+		('5',"5"),
+		('6',"6"),
+		('7',"7"),
+		('8',"8"),
+		('9',"9"),
+		('10',"10"),
+		('11',"11"),
+		('12',"12"),
+		)
+	semestre = models.CharField(choices=semestre_opc, max_length=50, default="1")
 	fecha = models.DateField()
 
-	
 class DatosGenerales(UsuarioModelo):
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)

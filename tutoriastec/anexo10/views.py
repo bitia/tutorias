@@ -37,8 +37,10 @@ def ajaxguardar(request):
         )
 
 
-def fortalezas_vista(request):
-    return render (request,"anexos/anexo10.html",{"fort" : fort,"amen":amenazas,"debi":debilidades,"opor":oportunidades})
+def foda(request):
+    return render (request,"anexo10/foda.html",{"fort" : fort,"amen":amenazas,"debi":debilidades,"opor":oportunidades})
+
+
 
 ##1 recibir los datos y gurdarlos en json en el modelo de fortalezas(mandarle el usuario ...)
 ##2 formulario de fortalezas , validar los datos, agregar usuario,guardar 

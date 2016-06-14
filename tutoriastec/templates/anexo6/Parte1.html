@@ -1,0 +1,44 @@
+{% extends "base/base_anexo.html" %}
+{% load staticfiles %}
+{% block title %}Anexo 6 - Formato de registro{% endblock title %}
+{% block contenido %}
+<section class="row">
+    <form class="" action="#" method="post">{% csrf_token %}
+      {% for field in form %}
+           <div class="item">
+               <div class="callout">
+
+               <label>{{ field.label_tag }}
+               {{ field }}
+
+               </label>
+                <span class="error">{{ field.errors }}</span>
+
+               {% if field.help_text %}
+               <p class="help">{{ field.help_text|safe }}</p>
+               {% endif %}
+
+               </div>
+           </div>
+       {% endfor %}
+       {% for field in form2 %}
+           <div class="item">
+               <div class="callout">
+
+               <label>{{ field.label_tag }}
+               {{ field }}
+
+               </label>
+                <span class="error">{{ field.errors }}</span>
+
+               {% if field.help_text %}
+               <p class="help">{{ field.help_text|safe }}</p>
+               {% endif %}
+
+               </div>
+           </div>
+       {% endfor %}
+       <input class="button success"  type="submit" value="enviar datos">
+    </form>
+</section>
+{% endblock contenido %}

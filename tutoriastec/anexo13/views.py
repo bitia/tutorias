@@ -7,7 +7,7 @@ from django.db.models import F
 
 # Create your views here.
 @login_required(login_url='/')
-def hola(request):
+def asertividadView(request):
     usuario=request.user
     errores=[]
     if request.method=='POST':
@@ -36,17 +36,17 @@ def hola(request):
             errores.append(f_asertividad.errors)
             print ("No es valido el formulario")
             print(errores)
-            return render(request,"anexos/asertividad.html", {"form":f_asertividad})
+            return render(request,"anexo13/asertividad.html", {"form":f_asertividad})
     else:
         try:
             userTest= TestAsertividad.objects.get(usuario = usuario)
             f_asertividad=TestAsertividadForm(instance =userTest)
             print("usuario si tiene test ")
-            return render(request,"anexos/asertividad.html", {"form":f_asertividad})
+            return render(request,"anexo13/asertividad.html", {"form":f_asertividad})
         except:
             print("usuario no tiene test ")
             f_asertividad=TestAsertividadForm()
-            return render(request,"anexos/asertividad.html", {"form":f_asertividad})
+            return render(request,"anexo13/asertividad.html", {"form":f_asertividad})
 
 def gracias(request):
     return render(request,"anexos/gracias.html", {"mensaje":"gracias por llenar el test de asertividad"})

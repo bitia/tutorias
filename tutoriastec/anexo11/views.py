@@ -7,7 +7,7 @@ class OrgStudioView(View):
     form_class= OrgEstudioForm
     initial=''
     errores=[]
-    template_name = 'anexo11.html'
+    template_name = 'anexo11/Parte1.html'
     def get(self, request):
         form = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'form': form})
