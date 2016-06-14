@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from  django.http  import  HttpResponseRedirect 
+from  django.http  import  HttpResponseRedirect
 from  django.views.generic  import  View
 from .forms import OrgEstudioForm, TecEstudioForm, MotEstudioForm
 # Create your views here.
@@ -7,7 +7,7 @@ class OrgStudioView(View):
     form_class= OrgEstudioForm
     initial=''
     errores=[]
-    template_name = 'anexo11.html'
+    template_name = 'anexos/anexo11.html'
     def get(self, request):
         form = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'form': form})
