@@ -4,7 +4,5 @@ from .views import Anexo6View
 
 urlpatterns = [
     #   /anexo6/   
-    url(r'^nuevo$', Anexo6View.as_view() , name='anexo6'),
-
-
+    url(r'^parte1$', Anexo6View.as_view() , name='anexo6'),
 ]

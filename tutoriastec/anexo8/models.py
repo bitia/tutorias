@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
-from core.models import UsuarioModelo
+from core.models import UsuarioModelo ,TiempoModelo
 
 # Create your models here.
 class FormatoEntrevista(UsuarioModelo):
@@ -112,7 +113,8 @@ class EstadoPsicofisiologicos(UsuarioModelo):
 		comentarios= JSONField(default={})
 		
 
-class DatosHermanos(UsuarioModelo):
+class DatosHermanos(TiempoModelo):
+	user= models.ForeignKey(User,blank=True, null= True)
 	nombre = models.CharField(max_length=50)
 	fecha_nacimiento = models.DateField()
 	
@@ -179,10 +181,17 @@ class AreaIntegracion(UsuarioModelo):
 	actitud_con_madre=models.CharField(choices=relacion_opc,
 			default='2',max_length=50)
 
-	sientes_ligado = models.ForeignKey(DatosHermanos,on_delete=models.CASCADE,blank=True,default="")
+	fam_opc = (
+		('1',"Papá"),
+		('2',"Mamá"),
+		('3',"Hermano"),
+		('4',"Hermana"),
+		('5',"Tios"),
+		)
+	sientes_ligado = models.CharField(choices=fam_opc, max_length=50)	
 	sientes_ligado_por = models.TextField(blank= True)
-	ocupa_educacion = models.CharField(max_length=50)
-	influido_estudiar = models.CharField(max_length=50)
+	ocupa_educacion = models.CharField(choices=fam_opc,max_length=50)
+	influido_estudiar = models.CharField(choices=fam_opc,max_length=50)
 	otro_inf_familiar = models.TextField(blank=True)
 #  :::::::::::::::::::::::::::::::::::::::::::integracion social
 	relacion_con_companeros=models.CharField(choices=relacion_opc,
