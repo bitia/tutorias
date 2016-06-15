@@ -55,7 +55,7 @@
 		<h2 class="padding-top text-center">¿CÓMO TRABAJAR EN LA PLATAFORMA DE TUTORIAS TUTOTECNM?</h2>
 
 		<div class="row padding-top">
-			<div class="small-12 medium-6 columns">
+			<div class="small-12 medium-6 columns wow fadeInLeft" data-wow-duration="2s" data-wow-delay="1s">
 				<img src="{% static "img/index1.png" %}" alt="" width="300" height="150"/>
 			</div>
 			<div class="small-12 medium-6 columns">
@@ -68,13 +68,62 @@
 					Nota: Tu contraseña la podrás cambiar posteriormente.
 				</blockquote>
 			</div>
+
 			<hr class="padding-top">
+
 			<div class="small-12 medium-6 columns padding-top">
+				<h3>Llenado de los anexos</h3>
+				<hr>
+				<p>
+					Realiza paso a paso el llenado de los anexos ya que se encuentran de una forma práctica y sencilla para poder completarlos.
+				</p>
+			</div>
+			<div class="small-12 medium-6 columns padding-top wow fadeInRight" data-wow-duration="2s" data-wow-delay="1s">
 				<img src="{% static "img/index2.png" %}" alt="" width="300" height="150"/>
 			</div>
 		</div>
 
+		<hr class="padding-top">
+
+		<div class="small-12 medium-6 columns padding-top wow fadeInLeft" data-wow-duration="2s" data-wow-delay="1s">
+			<img src="{% static "img/index3.png" %}" alt="" width="300" height="150"/>
+		</div>
+			<div class="small-12 medium-6 columns padding-top">
+				<h3>Actividades</h3>
+				<hr>
+				<p>
+					Habrá una serie de actividades que tendrás que contestar para terminar con éxito tu Programa de Tutorias.
+				</p>
+			</div>
+
+		<hr class="padding-top">
+
+		<div class="small-12 medium-6 columns padding-top">
+			<h3>Monitorea tus avances</h3>
+			<hr>
+			<p>
+				Podrás visualizar tus avances, actividades pendientes, progreso en tus anexos e incluso ponerte en contacto con tu tutor.
+			</p>
+		</div>
+		<div class="small-12 medium-6 columns padding-top wow fadeInRight" data-wow-duration="2s" data-wow-delay="1s">
+			<img src="{% static "img/index4.png" %}" alt="" width="300" height="150"/>
+		</div>
+	</div>
+
+		</div>
 	</article>
 </section>
 
 {% endblock contenido %}
+
+{% block masjs %}
+<script src="{% static "js/vendor/wow.min.js" %}">
+
+</script>
+{% endblock masjs %}
+
+{% block scriptjs %}
+<script>
+new WOW().init();
+</script>
+{% endblock scriptjs %}
