@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'import_export',
     'alumno',
+    'anexo9',
 
 ]
 

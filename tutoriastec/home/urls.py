@@ -14,6 +14,5 @@ urlpatterns = [
     url(r'^alumno/perfil$', views.perfil, name='perfil'),
     url(r'^anexos/', TemplateView.as_view(template_name="anexos/anexos.html")),
     url(r'^contacto/', TemplateView.as_view(template_name="contacto.html")),
-    url(r'^anexo10/', TemplateView.as_view(template_name="anexos/anexo10.html")),
     url(r'^actividades/', TemplateView.as_view(template_name="actividades.html")),
     ]
