@@ -1,5 +1,6 @@
 from django import forms
 from .models import FormatoEntrevista, EstadoPsicofisiologicos, DatosHermanos, AreaIntegracion, CaracteristicasPersonales, AreaPsicopedagogica, PlanDeVida
+from django.forms.widgets import NumberInput
 
 class Parte1Form(forms.ModelForm):
     ''' Form FormatoEntrevista'''
@@ -36,6 +37,7 @@ class Parte6Form(forms.ModelForm):
     class Meta:
         model= AreaPsicopedagogica
         exclude=["usuario","fecha"]
+        widgets={'promedio_anterior':NumberInput(attrs={"min":'0',"max":'100',"step":'0.5'})}
         
 class Parte7Form(forms.ModelForm):
     '''  PlanDeVida '''

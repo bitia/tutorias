@@ -1,27 +1,28 @@
 {% extends "base/base_anexo.html" %}
 {% load staticfiles %}
-{% block title %}Anexo 8 - Datos Hermanos{% endblock title %}
+{% block title %}Anexo 8 - Parte 3{% endblock title %}
 {% block contenido %}
 <section class="row">
+  <div class="small-12 medium-8 medium-centered columns">
     <form class="" action="#" method="post">{% csrf_token %}
-      {% for field in form %}
-           <div class="item">
-               <div class="callout">
-
-               <label>{{ field.label_tag }}
-               {{ field }}
-
-               </label>
-                <span class="error">{{ field.errors }}</span>
-
-               {% if field.help_text %}
-               <p class="help">{{ field.help_text|safe }}</p>
-               {% endif %}
-
-               </div>
-           </div>
-       {% endfor %}
-       <input class="button success"  type="submit" value="enviar datos">
+      <div class="row">
+        <h2 class="text-center">Datos Hermanos</h2>
+                {% for field in form %}
+                <div class="small-12 medium-6{% if forloop.last %} end {% endif %} columns">
+                     <div class="item">
+                         <label>{{ field.label_tag }}
+                         {{ field }}
+                         </label>
+                          <span class="error">{{ field.errors }}</span>
+                         {% if field.help_text %}
+                         <p class="help">{{ field.help_text|safe }}</p>
+                         {% endif %}
+                     </div>
+                </div>
+                {% endfor %}
+      </div>
+    <input class="button success"  type="submit" value="enviar datos">
     </form>
+    </div>
 </section>
 {% endblock contenido %}
