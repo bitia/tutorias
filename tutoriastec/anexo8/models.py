@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
 from core.models import UsuarioModelo ,TiempoModelo
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class FormatoEntrevista(UsuarioModelo):
@@ -105,7 +106,7 @@ class EstadoPsicofisiologicos(UsuarioModelo):
 			max_length=50)
 		pesadillas=models.CharField(choices=opc_123,default="5",
 			max_length=50)
-		incontinecia=models.CharField(choices=opc_123,default="5",
+		incontinencia=models.CharField(choices=opc_123,default="5",
 			max_length=50)
 		tartamudeo=models.CharField(choices=opc_123,default="5",
 			max_length=50)
@@ -114,7 +115,7 @@ class EstadoPsicofisiologicos(UsuarioModelo):
 		
 
 class DatosHermanos(TiempoModelo):
-	user= models.ForeignKey(User,blank=True, null= True)
+	usuario= models.ForeignKey(User,blank=True, null= True)
 	nombre = models.CharField(max_length=50)
 	fecha_nacimiento = models.DateField()
 	
@@ -304,7 +305,11 @@ class AreaPsicopedagogica(UsuarioModelo):
 	asignatura_bajopromedio_anterior = models.CharField(max_length=50)
 	vienes_tecnologico = models.CharField(max_length=50)
 	motiva_venir_tecnologico = models.TextField()
-	promedio_anterior = models.FloatField()
+
+	promedio_anterior = models.FloatField(
+		validators = [MinValueValidator(0), MaxValueValidator(100)])
+
+
 	asignaturas_reprovadas_opc = (
 		('si',"Si"),
 		('no',"No"),
@@ -323,7 +328,7 @@ class PlanDeVida (UsuarioModelo):
 	mi_caracter = models.TextField(blank= False)
 	me_gusta_que = models.TextField(blank= False)
 	aspiro_a_que = models.TextField(blank= False)
-	miedo_aque = models.TextField(blank= False)
+	miedo_a_que = models.TextField(blank= False)
 	podre_lograr_que = models.TextField(blank= False)
 	comentarios=JSONField(default={})
 
