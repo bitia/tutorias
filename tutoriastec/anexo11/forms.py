@@ -2,17 +2,20 @@
 from django import forms
 from .models import OrganizacionEstudio, TecnicasEstudio, MotivacionEstudio
 
-class OrgEstudioForm(forms.ModelForm):
+class Parte1Form(forms.ModelForm):
+    ''' OrganizacionEstudio '''
     class Meta:
         model = OrganizacionEstudio
         exclude = ["usuario","diagnostico"]
 
-class TecEstudioForm(forms.ModelForm):
+class Parte2Form(forms.ModelForm):
+    ''' TecnicasEstudio '''
     class Meta:
         model = TecnicasEstudio
         exclude = ["usuario","diagnostico"]
 
-class MotEstudioForm(forms.ModelForm):
+class Parte3Form(forms.ModelForm):
+    ''' MotivacionEstudio '''
     class Meta:
         model = MotivacionEstudio
         exclude = ["usuario","diagnostico"]
