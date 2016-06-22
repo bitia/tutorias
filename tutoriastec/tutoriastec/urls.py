@@ -31,4 +31,5 @@ urlpatterns = [
     url(r'^anexo6/', include('anexo6.urls')),
     url(r'^anexo10/', include('anexo10.urls')),
     url(r'^anexo8/', include('anexo8.urls')),
+    url(r'^anexo9/', include('anexo9.urls')),
 ]
