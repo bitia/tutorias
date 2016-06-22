@@ -1,0 +1,33 @@
+{% extends "base/base_anexo.html" %}
+{% load staticfiles %}
+{% block title %}Anexo 9 - Nuevo Suceso{% endblock title %}
+{% block contenido %}
+
+<header class="row padding-top">
+  <div class="small-12 medium-8 large-8 medium-centered text-center columns">
+    <h2>Línea de la Vida</h2>
+  </div>
+</header>
+
+<section class="row">
+  <section class="small-12 medium-8 large-8 medium-centered text-center columns">
+    <h3>Agregar Suceso</h3>
+    
+      <form class="" action="#" method="post">{% csrf_token %}
+          <section class="row padding-top">
+
+            <div class="small-12 medium-6 large-6 text-center columns">
+              <h4>Suceso:</h4>
+            </div>
+
+            <div class="small-12 medium-6 large-6 text-center columns">
+            <input type="text" name="name" value="">
+            </div>
+
+          </section>
+      </form>
+
+  </section>
+</section>
+
+{% endblock contenido %}

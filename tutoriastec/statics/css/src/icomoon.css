@@ -27,6 +27,12 @@ i {
 .it-in-alt:before {
     content: "\e901";
 }
+.it-add:before {
+    content: "\e902";
+}
+.it-subtract:before {
+    content: "\e903";
+}
 .it-home:before {
     content: "\e900";
 }
