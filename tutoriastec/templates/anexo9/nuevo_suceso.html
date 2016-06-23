@@ -12,21 +12,44 @@
 <section class="row">
   <section class="small-12 medium-8 large-8 medium-centered text-center columns">
     <h3>Agregar Suceso</h3>
-    
+
       <form class="" action="#" method="post">{% csrf_token %}
           <section class="row padding-top">
-
             <div class="small-12 medium-6 large-6 text-center columns">
               <h4>Suceso:</h4>
             </div>
-
             <div class="small-12 medium-6 large-6 text-center columns">
-            <input type="text" name="name" value="">
+              <input type="text" name="name" value="">
             </div>
-
+            <div class="small-12 medium-6 large-6 text-center columns">
+              <h4>Estado de ánimo:</h4>
+            </div>
+            <div class="small-12 medium-6 large-6 text-center columns">
+                <select>
+                  <option value="husker">Muy Feliz</option>
+                  <option value="starbuck">Feliz</option>
+                  <option value="hotdog">Neutro</option>
+                  <option value="apollo">Triste</option>
+                  <option value="apollo">Muy Triste</option>
+                </select>
+            </div>
+            <div class="small-9 medium-9 large-9 columns">
+              <div class="slider" data-slider data-initial-start="0" data-step="0.5" data-end="5">
+                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
+                <span class="slider-fill" data-slider-fill></span>
+              </div>
+            </div>
+            <div class="small-2 medium-2 large-2 columns">
+              <input type="number" id="sliderOutput2">
+            </div>
+            <div class="small-1 medium-1 large-1 columns">
+              <h4>años</h4>
+            </div>
+            <div class="small-12 medium-12 large-12 medium-centered columns">
+            <input class="button" type="submit" name="name" value="Añadir a la lista">
+            </div>
           </section>
       </form>
-
   </section>
 </section>
 
