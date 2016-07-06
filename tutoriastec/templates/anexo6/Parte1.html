@@ -5,15 +5,15 @@
 <header class="row">
   <div class="small-12 medium-8 medium-centered large-8 columns text-center">
     <h2>Anexo 6</h2>
-    <h3>Formato de registro</h3>
+    <h3>Formato de Registro</h3>
   </div>
 </header>
 <section class="row">
-    <form class="" action="#" method="post">{% csrf_token %}
+    <form  action="#" method="post">{% csrf_token %}
+      <div class="row text-left">
+        <h2>Datos Personales</h2>
       {% for field in form %}
-           <div class="item">
-               <div class="callout">
-
+        <div class="medium-6 {% if forloop.last %} end {% endif %} columns">
                <label>{{ field.label_tag }}
                {{ field }}
 
@@ -23,27 +23,23 @@
                {% if field.help_text %}
                <p class="help">{{ field.help_text|safe }}</p>
                {% endif %}
-
-               </div>
-           </div>
+             </div>
        {% endfor %}
+       </div>
+       <div class="row text-left">
+        <h2>Datos Generales</h2>
        {% for field in form2 %}
-           <div class="item">
-               <div class="callout">
-
+           <div class="medium-4 {% if forloop.last %} end {% endif %} columns">
                <label>{{ field.label_tag }}
                {{ field }}
-
                </label>
                 <span class="error">{{ field.errors }}</span>
-
                {% if field.help_text %}
                <p class="help">{{ field.help_text|safe }}</p>
                {% endif %}
-
-               </div>
            </div>
        {% endfor %}
+       </div>
        <input class="button success"  type="submit" value="enviar datos">
     </form>
 </section>
