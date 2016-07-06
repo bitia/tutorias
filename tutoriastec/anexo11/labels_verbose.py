@@ -66,3 +66,29 @@ etiquetas3=[
 "¿Te sientes reacio, por lo general, a hablar con tus docentes de tus proyectos futuros , de estudio o profecionales?",
 "¿Criticas con frecuencia a tus docentes cuando hablas con tus compañeros?"
 ]
+etiquetas4=[
+"Me ayuda trazar o escribir a mano las palabras cuando tengo que aprenderlas de Memoria",
+"Recuerdo mejor un tema al escuchar una conferencia en vez de leer un libro de Texto",
+"Prefiero las clases que requieren una prueba sobre lo que se lee en el libro de Texto",
+"Me gusta comer bocados y mascar chicle, cuando estudio",
+"Al prestar atención a una conferencia, puedo recordar las ideas principales sin Anotarlas",
+"Prefiero las instrucciones escritas sobre las orales",
+"Yo resuelvo bien los rompecabezas y los laberintos",
+"Prefiero las clases que requieran una prueba sobre lo que se presenta durante  una conferencia",
+"Me ayuda ver diapositivas y videos para comprender un tema",
+"Recuerdo más cuando leo un libro que cuando escucho una conferencia",
+"Por lo general, tengo que escribir los números del teléfono para recordarlos bien",
+"Prefiero recibir las noticias escuchando la radio en vez de leerlas en un periódico",
+"Me gusta tener algo como un bolígrafo o un lápiz en la mano cuando estudio",
+"Necesito copiar los ejemplos de la pizarra del maestro para examinarlos más Tarde",
+"Prefiero las instrucciones orales del maestro a aquellas escritas en un examen o en la pizarra",
+"Prefiero que un libro de texto tenga diagramas gráficos y cuadros porque me ayudan mejor a  entender el material",
+"Me gusta escuchar música al estudiar una obra, novela, etc.",
+"Tengo que apuntar listas de cosas que quiero hacer para recordarlas",
+"Puedo corregir mi tarea examinándola y encontrando la mayoría de los errores",
+"Prefiero leer el periódico en vez de escuchar las noticias",
+"Puedo recordar los números de teléfono cuando los oigo",
+"Gozo el trabajo que me exige usar la mano o herramientas",
+"Cuando escribo algo, necesito leerlo en voz alta para oír como suena",
+"Puedo recordar mejor las cosas cuando puedo moverme mientras estoy aprendiéndolas, por ej. caminar al estudiar, o participar en una actividad que me permita moverme, etc."
+]
