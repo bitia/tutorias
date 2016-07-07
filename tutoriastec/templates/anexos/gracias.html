@@ -1,10 +1,23 @@
 {% extends "base/base_anexo.html" %}
-
+{% block title %}
+    Gracias
+{% endblock title %}
 {% block contenido %}
 
-    <h3>Agradecimientos</h3>
-    
+<section class="column row">
 
-    <h1>{{mensaje}}</h1>
+    <div class="panel text-center">
+        <h2 class="icon-success"><i class="it-checkmark"></i></h2>
+        <h3>
+            Felicidades has terminado el Anexo {{anexoNum}} {% if anexoParteNum %}Parte {{anexoParteNum}}{% endif %}
+        </h3>
+        <h4>Para seguir contestando dale clic aquí abajo</h4>
+        <p><a href="{{siguienteTestURL}}">SIGUIENTE</a></p>
+
+    </div>   
+
+    
+</section>
+    
 
 {% endblock contenido %}
