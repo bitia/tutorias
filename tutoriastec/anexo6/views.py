@@ -15,11 +15,15 @@ class Anexo6View(View):
         return render(request, self.template_name, {'form': form,'form2': form2})
     def post(self, request):
         form = self.form_class(request.POST)
+        form2 = self.form_class(request.POST)
         usuario=request.user
-        if form.is_valid():
+        if form.is_valid() and form2.is_valid():
             form=form.save()
+            form2=form2.save()
             form.usuario=usuario
             form.save()
+            form2.usuario=usuario
+            form2.save()
             return HttpResponseRedirect("/anexo13/gracias/")
         else:
             self.errores.append(form.errors)

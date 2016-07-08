@@ -9,3 +9,4 @@
 ##anexo 12 y su diagnostico
 ##anexo 15 formato de registro para desempeño academico
 
+#preguntar hasta q semestre puden estar (anexo6, modelo datos personales)
