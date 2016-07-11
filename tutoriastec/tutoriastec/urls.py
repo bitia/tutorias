@@ -22,6 +22,7 @@ import anexo11
 import listaanexos
 import anexo6
 import anexo8
+import anexo12
 urlpatterns = [
     url(r'^', include('home.urls')),
     url(r'^admin/', admin.site.urls),
@@ -32,4 +33,5 @@ urlpatterns = [
     url(r'^anexo10/', include('anexo10.urls')),
     url(r'^anexo8/', include('anexo8.urls')),
     url(r'^anexo9/', include('anexo9.urls')),
+    url(r'^anexo12/', include('anexo12.urls')),
 ]
