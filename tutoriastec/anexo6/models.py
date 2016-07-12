@@ -69,7 +69,7 @@ class DatosGenerales(UsuarioModelo):
 	becado_lugar_opc = (
 		('federal',"Gobierno Federal"),
 		('estatal',"Gobierno Estatal"),
-		('bachillerato',"Esfuerzo de bachillerato"),
+		('bachillerato',"Esfuerzo de Bachillerato"),
 		)
 	becado_lugar=models.CharField(choices=becado_lugar_opc,
 			default='federal', max_length=50,blank=True)
@@ -78,7 +78,7 @@ class DatosGenerales(UsuarioModelo):
 
 	conquien_vives_opc= (
 		('familia',"Familia"),
-		('faminia_cercana',"Familia Cercana"),
+		('familia_cercana',"Familia Cercana"),
 		('estudiantes',"Estudiantes"),
 		('solo',"Solo")
 		)
@@ -100,8 +100,8 @@ class DatosGenerales(UsuarioModelo):
 		('primaria',"Primaria"),
 		('secundaria',"Secundaria"),
 		('preparatoria',"Preparatoria"),
-		('tecnico',"Tecnico"),
-		('lic',"Lic"),
+		('tecnico',"Técnico"),
+		('lic',"Licenciatura"),
 		('posgrado ',"Posgrado"),
 		('sinestudio',"Sin estudio")
 		)
@@ -113,8 +113,8 @@ class DatosGenerales(UsuarioModelo):
 		('primaria',"Primaria"),
 		('secundaria',"Secundaria"),
 		('preparatoria',"Preparatoria"),
-		('tecnico',"Tecnico"),
-		('lic',"Lic"),
+		('tecnico',"Técnico"),
+		('lic',"Licenciatura"),
 		('posgrado ',"Posgrado"),
 		('sinestudio',"Sin estudio")
 		)
