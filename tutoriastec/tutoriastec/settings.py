@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'import_export',
     'alumno',
     'anexo9',
+    'anexo12',
 
 ]
 

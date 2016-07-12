@@ -4,38 +4,48 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
 from core.models import UsuarioModelo
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class DatosPersonales(UsuarioModelo):
-	carrera = models.CharField(max_length=30)
+	carrera = models.CharField(max_length=50)
 	numero_control= models.CharField(max_length=50)
 #	for num in range(1,13):
 #		semestre_opc.append(num)
-	semestre_opc=(
-		('1',"1"),
-		('2',"2"),
-		('3',"3"),
-		('4',"4"),
-		('5',"5"),
-		('6',"6"),
-		('7',"7"),
-		('8',"8"),
-		('9',"9"),
-		('10',"10"),
-		('11',"11"),
-		('12',"12"),
-		)
-	semestre = models.CharField(choices=semestre_opc, max_length=50, default="1")
+	semestre= models.IntegerField(validators = [MinValueValidator(0), MaxValueValidator(12)])
+#	semestre_opc=(
+#		('1',"1"),
+#		('2',"2"),
+#		('3',"3"),
+#		('4',"4"),
+#		('5',"5"),
+#		('6',"6"),
+#		('7',"7"),
+#		('8',"8"),
+#		('9',"9"),
+#		('10',"10"),
+#		('11',"11"),
+#		('12',"12"),
+#		)
+#	semestre = models.CharField(choices=semestre_opc, max_length=50, default="1")
 	fecha = models.DateField()
 
 class DatosGenerales(UsuarioModelo):
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
 	nombre = models.CharField( max_length=50)
-	sexo = models.CharField(max_length=50)
+
+	sexo_opc=(
+		('m',"Masculino"),
+		('f',"Femenino"),
+		)
+	sexo = models.CharField(choices=sexo_opc,max_length=50)
 	correo = models.EmailField()
+
 	telefono = models.IntegerField()
+	
 	celular = models.IntegerField()
+
 	fecha_nacimiento = models.DateField()
 	lugar_nacimiento = models.CharField(max_length=50)
 
@@ -47,7 +57,8 @@ class DatosGenerales(UsuarioModelo):
 	estado_civil=models.CharField(choices=estado_civil_opc,
 			default='soltero', max_length=50)
 
-	numero_hijos = models.IntegerField(null=True,blank=True)
+	numero_hijos = models.IntegerField()
+
 	domicilio_actual = models.CharField(max_length=50,default="") 
 
 	escolaridad_opc=(
@@ -76,13 +87,13 @@ class DatosGenerales(UsuarioModelo):
 
 	becado_institucion = models.CharField(max_length=50,default="")
 
-	conquien_vives_opc= (
+	con_quien_vives_opc= (
 		('familia',"Familia"),
 		('familia_cercana',"Familia Cercana"),
 		('estudiantes',"Estudiantes"),
 		('solo',"Solo")
 		)
-	conquien_vives=models.CharField(choices=conquien_vives_opc,
+	con_quien_vives=models.CharField(choices=con_quien_vives_opc,
 			default='familia', max_length=50)
 
 	trabajas_opc=(
@@ -93,8 +104,8 @@ class DatosGenerales(UsuarioModelo):
 			default='no', max_length=50)
 
 	trabajas_donde = models.CharField(max_length=50,default="")
-	trabajas_horario_inicio = models.TimeField(null=True)
-	trabajas_horario_salida = models.TimeField(null=True)
+	trabajas_horario_inicio = models.TimeField(blank=True,null=True)
+	trabajas_horario_salida = models.TimeField(blank=True,null=True)
 
 	escolaridad_padre_opc = (
 		('primaria',"Primaria"),

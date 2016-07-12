@@ -67,7 +67,7 @@ class OrganizacionEstudio(UsuarioModelo):
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
     
-    comentarios = JSONField(default={})
+    comentarios = JSONField(default={},blank=True)
     def __unicode__(self):
         return "%s "% (self.usuario.username)
 
@@ -129,7 +129,8 @@ class TecnicasEstudio(UsuarioModelo):
         )
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
-    comentarios = JSONField(default={})
+    comentarios = JSONField(default={},blank=True)
+
     def __unicode__(self):
         return "%s "% (self.usuario.username)
 
@@ -194,7 +195,7 @@ class MotivacionEstudio(UsuarioModelo):
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
 
-    comentarios = JSONField(default={})
+    comentarios = JSONField(default={},blank=True)
     def __unicode__(self):
         return "%s "% (self.usuario.username)
 
@@ -265,6 +266,6 @@ class InventarioEstudio(UsuarioModelo):
     diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
             blank=True,max_length=2)
 
-    comentarios = JSONField(default={})
+    comentarios = JSONField(default={},blank=True)
     def __unicode__(self):
         return "%s "% (self.usuario.username)
