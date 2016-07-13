@@ -96,11 +96,11 @@ class EstadoPsicofisiologicos(UsuarioModelo):
 			max_length=50)
 		dolores_cabeza=models.CharField(choices=opc_123,default="5",
 			max_length=50)
-		perdidad_equilibrio=models.CharField(choices=opc_123,default="5",
+		pérdida_equilibrio=models.CharField(choices=opc_123,default="5",
 			max_length=50)
 		fatiga=models.CharField(choices=opc_123,default="5",
 			max_length=50)
-		perdida_vista=models.CharField(choices=opc_123,default="5",
+		pérdida_vista=models.CharField(choices=opc_123,default="5",
 			max_length=50)
 		dificultades_dormir=models.CharField(choices=opc_123,default="5",
 			max_length=50)
