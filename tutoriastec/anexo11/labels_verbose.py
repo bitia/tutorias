@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 etiquetas1=[
 "¿Sueles dejar para el ultimo la preparación de tus trabajos?",
-"¿Crees que el sueño o el cansancio te impida estudiar eficazmente en muchas ocasiones ?",
+"¿Crees que el sueño o el cansancio te impida estudiar eficazmente en muchas ocasiones?",
 "¿Es frecuente que no termines tu tarea a tiempo?",
 "¿Tiendes a emplear tiempo en leer revistas, ver televisión o charlar cuándo debieras dedicarlo a estudiar?",
-"Tus actividades sociales o deportivas.¿Te llevan a menudo a descuidar tus tareas escolares?",
+"Tus actividades sociales o deportivas ¿Te llevan a menudo a descuidar tus tareas escolares?",
 "¿Sueles dejar pasar un día o más antes de repasar los apuntes tomados en clase?",
 "¿Sueles dedicar tu tiempo libre entre las 4:00 de la tarde y a las 9:00 de la noche a otras actividades que no sean estudiar?",
 "¿Descubres algunas veces de pronto,que debes entregar una tarea antes de lo que creías?",
@@ -22,12 +22,12 @@ etiquetas1=[
 "¿Suele hacerse lento tu estudio debido a que no tienes a la mano los libros y los materiales necesarios?"]
 
 etiquetas2=[
-"¿Tiendes a comenzar la lectura de un libro de texto sin hojear previamente los subtitulos y las instrucciones?",
+"¿Tiendes a comenzar la lectura de un libro de texto sin hojear previamente los subtítulos y las instrucciones?",
 "¿Te saltas por lo general las figuras, gráficas y tablas cuándo estudias un tema?",
 "¿Suele serte difícil seleccionar los puntos de los temas de estudio?",
 "¿Te sorprendes con una cierta frecuencia, pensando en algo que no tiene nada que ver con lo que estudias?",
 "¿Sueles tener dificultad en entender tus apuntes de clases cuándo tratas de repasarlos, después de cierto tiempo?",
-"Al tomar notas,¿Te sueles quedar atras con frecuencia debido a que no puedes escribir con suficiente rapidez?",
+"Al tomar notas,¿Te sueles quedar atrás con frecuencia debido a que no puedes escribir con suficiente rapidez?",
 "Poco después de comenzar un curso ¿Sueles encontrarte con tus apuntes formando un 'revoltijo'?",
 "¿Tomas normalmente tus apuntes tratando de escribir las palabras exactas del docente?",
 "Cuando tomas notas de un libro ¿Tienes la costumbre de copiar el material necesario, palabra por palabra?",
@@ -35,17 +35,17 @@ etiquetas2=[
 "¿Tienes problemas para organizar los datos o el contenido de una evaluación?",
 "¿Al repasar el temario de una evaluación formulas un resumen de este?",
 "¿Te preparas aveces para una evaluación memorizando fórmulas, definiciones o reglas que no entiendes con claridad?",
-"¿Te resulta difícil decidir qué estudiar y como estudiarlo cuando pre?",
+"¿Te resulta difícil decidir qué estudiar y como estudiarlo cuando preparas una evaluación?",
 "¿Sueles tener dificultades para organizar, en un orden lógico, las asignaturas que debes estudiar por temas?",
-"Al preparar evaluación,¿Sueles estudiar toda la asignatura, en el ultimo momento?",
-"¿Sueles entregar tus exámenes sin revisarlos detenidamente para ver si tienen algún error cometido por descuido?",
+"Al preparar evaluación,¿Sueles estudiar toda la asignatura, en el último momento?",
+"¿Sueles entregar tus exámenes sin revisarlos detenidamente, para ver si tienen algún error cometido por descuido?",
 "¿Te es posible con frecuencia terminar una evaluación de exposición de un tema en el tiempo preescrito?",
 "¿Sueles perder puntos en exámenes con preguntas de 'Verdadero-Falso',debido a que no lees detenidamente?",
 "¿Empleas normalmente mucho tiempo en contestar la primera mitad de la prueba y tienes que apresurarte en la segunda?"
 ]
 
 etiquetas3=[
-"Después de los primeros días o semanas del curso,¿Tiendes a perder interés por el estudio?",
+"Después de los primeros días o semanas del curso ¿Tiendes a perder interés por el estudio?",
 "¿Crees que en general, basta estudiar lo necesario para obtener un 'aprobado' en las asignaturas?",
 "¿Te sientes frecuentemente confuso e indeciso sobre cuáles deben ser tus metas formativas y profesionales?",
 "¿Sueles pensar que no vale la pena el tiempo y el esfuerzo que son necesarios para lograr una educación universitaria?",
@@ -55,23 +55,23 @@ etiquetas3=[
 "¿Piensas con frecuencia que las asignaturas que estudias tienen poco valor practico para ti?",
 "¿Sientes, frecuentes deseos de abandonar la escuela y conseguir un trabajo?",
 "¿Sueles tener la sensación de lo que se enseña en los centros docentes no te prepara para afrontar los problemas de la vida adulta?",
-"¿Suele dedicarte de modo casual según el estado de ánimo en que te encuentres?",
+"¿Sueles dedicarte de modo casual, según el estado de ánimo en que te encuentres?",
 "¿Te horroriza estudiar libros de textos por que son insípidos y aburridos?",
 "¿Esperas normalmente que te fijen la fecha de evaluación para comenzar a estudiar los textos o a repasar tus apuntes de clases?",
 "¿Sueles pensar que los examenes son pruebas penosas que no se puede escapar y respecto a las cuales lo que se debe hacerse es sobrevivir, del modo que sea?",
 "¿Sientes con frecuencia que tus docentes no comprenden las necesidades de los estudiantes?",
-"¿Tienes normalmente la sensación que los docentes exigen demaciadas horas de estudio fuera de clases?",
+"¿Tienes normalmente la sensación que los docentes exigen demasiadas horas de estudio fuera de clases?",
 "¿Dudas por lo general en pedir ayuda a tus docentes en tareas que te son difíciles?",
 "¿Sueles pensar que tus docentes no tienen contacto con los temas y sucesos de la actualidad?",
-"¿Te sientes reacio, por lo general, a hablar con tus docentes de tus proyectos futuros , de estudio o profecionales?",
+"¿Te sientes reacio, por lo general, a hablar con tus docentes de tus proyectos futuros , de estudio o profesionales?",
 "¿Criticas con frecuencia a tus docentes cuando hablas con tus compañeros?"
 ]
 etiquetas4=[
-"Me ayuda trazar o escribir a mano las palabras cuando tengo que aprenderlas de Memoria",
+"Me ayuda a trazar o escribir a mano las palabras cuando tengo que aprenderlas de Memoria",
 "Recuerdo mejor un tema al escuchar una conferencia en vez de leer un libro de Texto",
 "Prefiero las clases que requieren una prueba sobre lo que se lee en el libro de Texto",
 "Me gusta comer bocados y mascar chicle, cuando estudio",
-"Al prestar atención a una conferencia, puedo recordar las ideas principales sin Anotarlas",
+"Al prestar atención a una conferencia, puedo recordar las ideas principales sin anotarlas",
 "Prefiero las instrucciones escritas sobre las orales",
 "Yo resuelvo bien los rompecabezas y los laberintos",
 "Prefiero las clases que requieran una prueba sobre lo que se presenta durante  una conferencia",
@@ -80,7 +80,7 @@ etiquetas4=[
 "Por lo general, tengo que escribir los números del teléfono para recordarlos bien",
 "Prefiero recibir las noticias escuchando la radio en vez de leerlas en un periódico",
 "Me gusta tener algo como un bolígrafo o un lápiz en la mano cuando estudio",
-"Necesito copiar los ejemplos de la pizarra del maestro para examinarlos más Tarde",
+"Necesito copiar los ejemplos de la pizarra del maestro para examinarlos más tarde",
 "Prefiero las instrucciones orales del maestro a aquellas escritas en un examen o en la pizarra",
 "Prefiero que un libro de texto tenga diagramas gráficos y cuadros porque me ayudan mejor a  entender el material",
 "Me gusta escuchar música al estudiar una obra, novela, etc.",
