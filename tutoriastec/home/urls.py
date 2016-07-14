@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^anexos/', TemplateView.as_view(template_name="anexos/anexos.html")),
     url(r'^contacto/', TemplateView.as_view(template_name="contacto.html")),
     url(r'^actividades/', TemplateView.as_view(template_name="actividades.html")),
-    
+    url(r'^anexo15/', TemplateView.as_view(template_name="anexo15/academico.html")),
+
     ]

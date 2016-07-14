@@ -25,18 +25,25 @@
 				Esta plataforma te servirá para darle seguimiento a tu programa de tutorias.
 			</h5>
 			<form method="post" action="/login/" class="padding-top">{% csrf_token %}
+
 			<div class="row">
-				<div class="small-6 columns">
-				<input type="text" placeholder="Número de Control"  name="username" required/>
+
+				<div class="input-group small-6 columns">
+					<div class="input-group-label"><i class="it-user"></i></div>
+					<input class="input-group-field" type="text" placeholder="Número de Control"  name="username" required/>
 				</div>
-				<div class="small-6 columns">
-				<input type="password" placeholder="Contraseña"  name="password" required />
+
+				<div class="input-group small-6 columns">
+					<div class="input-group-label"><i class="it-key"></i></div>
+				<input class="input-group-field" type="password" placeholder="Contraseña"  name="password" required />
 				</div>
+
 				<div class="small-12 small-centered columns">
 					<button class="button expanded success">
 						Iniciar Sesión
 					</button>
 				</div>
+
 			</div>
 			 </form>
 		</div>
