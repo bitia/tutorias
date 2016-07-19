@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="{% static "css/vendor/jquery-ui.min.css" %}">
     <link rel="stylesheet" href="{% static "css/vendor/jquery-ui.theme.min.css" %}">}
     <link rel="stylesheet" href="{% static "css/vendor/jquery.timepicker.css" %}">
-    
+
 
 {% endblock mascss %}
 {% block masjs %}
     <script src="{% static "owl-carousel/owl.carousel.min.js" %}"></script>
     <script src="{% static "js/vendor/jquery-ui.min.js" %}"></script>
     <script src="{% static "js/vendor/jquery.timepicker.min.js" %}"></script>
-    
+
+
 {% endblock masjs %}
 {% block scriptjs %}
   <script type="text/javascript">
@@ -46,7 +47,6 @@
     });
       $('#id_trabajas_horario_inicio').timepicker({ 'scrollDefault': 'now' });
       $('#id_trabajas_horario_salida').timepicker({ 'scrollDefault': 'now' });
-
-
   </script>
+
 {% endblock scriptjs %}

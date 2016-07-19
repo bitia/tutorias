@@ -30,7 +30,7 @@ class FormatoEntrevista(UsuarioModelo):
 		('prestada',"Prestada"),
 		('otro',"Otro"),
 		)
-	estadovivienda =models.CharField(choices=estadovivienda_opc,default ='propia',max_length=100)
+	estado_vivienda =models.CharField(choices=estadovivienda_opc,default ='propia',max_length=100)
 	especificacion_vivienda = models.CharField(max_length=50,default="")
 	personas_vives = models.IntegerField()
 
@@ -96,7 +96,7 @@ class EstadoPsicofisiologicos(UsuarioModelo):
 			max_length=50)
 		dolores_cabeza=models.CharField(choices=opc_123,default="5",
 			max_length=50)
-		perdidad_equilibrio=models.CharField(choices=opc_123,default="5",
+		perdida_equilibrio=models.CharField(choices=opc_123,default="5",
 			max_length=50)
 		fatiga=models.CharField(choices=opc_123,default="5",
 			max_length=50)
@@ -130,7 +130,7 @@ class DatosHermanos(TiempoModelo):
 		('secundaria',"Secundaria"),
 		('preparatoria',"Preparatoria"),
 		('tecnico',"Tecnico"),
-		('lic',"Lic"),
+		('lic',"Licenciatura"),
 		('posgrado ',"Posgrado"),
 		('sinestudio',"Sin estudio")
 		)

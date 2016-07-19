@@ -9,7 +9,7 @@ fort={
 "7":"Responsable",
 "8":"Perseverante",
 "9":"Valores bien fundamentados",
-"10": "Particitivo(a)",
+"10":"Particitivo(a)",
 }
 
 oportunidades={

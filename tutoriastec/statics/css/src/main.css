@@ -16,6 +16,7 @@ ul{
     list-style: none;
 }
 
+
 #fondotec{
 	background: #FFF url('/static/img/back8.jpg') no-repeat center;
 	background-size: cover;
@@ -325,4 +326,8 @@ body {
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
   animation-name: fadeInRight;
+}
+
+.input-group-label{
+  text-shadow: none;
 }
