@@ -1,5 +1,14 @@
-iniciar git
-entrar a la carpeta de proyecto de tutorias
+###Proyecto de Tutorias
+==========================
 
-git init
+
+##Diseño y Desarrollo
+1. Python y Django
+2. Foundation
+3. Git
+4. PLugins extras 
+
+
+#Proyecto de Tesis y Residencia
+
 
