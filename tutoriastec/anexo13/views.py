@@ -3,8 +3,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import TestAsertividadForm
 from .models import TestAsertividad
 from django.db.models import F
-
-
 # Create your views here.
 @login_required(login_url='/')
 def asertividadView(request):
@@ -21,12 +19,7 @@ def asertividadView(request):
         if f_asertividad.is_valid():
             print ("es valido el formulario")
             form=f_asertividad.save()
-            form.usuario=usuario
-            contador = 0
-            for f in f_asertividad.fields:
-                print f
-                
-            print contador
+            form.usuario=usuario 
             form.save()
 
             return redirect("/anexo13/gracias")
