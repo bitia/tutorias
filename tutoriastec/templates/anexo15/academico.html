@@ -4,10 +4,98 @@
 {% block contenido %}
 <header class="row">
   <div class="small-12 medium-8 large-8 medium-centered text-center padding-top">
-    <h2>FORMATO DE REGISTRO PARA EL DESEMPEÑO ACADÉMICO</h2>
-    <h4></h4>
+    <h3>FORMATO DE REGISTRO PARA EL DESEMPEÑO ACADÉMICO</h3>
+    <h4>Ingresa tus calificaciones que correspondan a cada parcial.</h4>
   </div>
 </header>
+ <hr>
+<section class="container row">
+  <div id="table" class="table-editable columns">
+    <table class="table">
+        <thead>
+          <tr>
+              <th>Materias</th>
+              <th>Primer Parcial</th>
+              <th>Segundo Parcial</th>
+              <th>Tercer Parcial</th>
+              <th>Cuarto Parcial</th>
+              <th>Quinto Parcial</th>
+              <th>
 
-
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Calculo Diferencial</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td>
+              <i class="it-cross table-remove"></i>
+              </td>
+          </tr>
+          <tr>
+              <td>Fundamentos de Programación</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td>
+              <i class="it-cross table-remove"></i>
+              </td>
+          </tr>
+          <tr>
+              <td>Taller de Ética</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td>
+              <i class="it-cross table-remove"></i>
+              </td>
+          </tr>
+          <tr>
+              <td>Quimica General</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td>
+              <i class="it-cross table-remove"></i>
+              </td>
+          </tr>
+          <tr>
+              <td>Fundamentos de Investigación</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td>
+              <i class="it-cross table-remove"></i>
+              </td>
+          </tr>
+          <tr>
+              <td>Taller de Investigación</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">-</td>
+              <td>
+              <i class="it-cross table-remove"></i>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <button id="export-btn" class="button">Guardar Calificaciones</button>
+  <p id="export"></p>
+  </div>
+</section>
 {% endblock contenido %}
