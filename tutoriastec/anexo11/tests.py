@@ -38,6 +38,7 @@ def contar (org_estudio_data):
     return contador
 
 #    tabla=["I","II","III","IV","V"]
+
 def valores(tipo,contador):
     calificacion=""
     lis2=[]
@@ -50,6 +51,7 @@ def valores(tipo,contador):
     [11,12,[13,14],[37,38],"Por debajo del promedio"],
     [10,11,12,[34,36],"Bajo"],
     [[0,9],[0,10],[0,11],[0,33],"Muy alto"]]
+
     for i in range(0,8):
         if type(datos[i][tipo]) is int:
             if contador==datos[i][tipo]:
@@ -59,6 +61,7 @@ def valores(tipo,contador):
             if contador>=lis2[0] and contador<=lis2[1]:
                 calificacion=datos[i][4]
     return calificacion
+    
 
 
     def removercampos(anexo ,*args):

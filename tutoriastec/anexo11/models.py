@@ -196,8 +196,8 @@ class MotivacionEstudio(UsuarioModelo):
             blank=True,max_length=2)
 
     comentarios = JSONField(default={},blank=True)
-    def __unicode__(self):
-        return "%s "% (self.usuario.username)
+#    def __unicode__(self):
+#        return "%s "% (self.usuario.username)
 
 class InventarioEstudio(UsuarioModelo):
 
@@ -257,14 +257,9 @@ class InventarioEstudio(UsuarioModelo):
     pregunta24=models.CharField(choices=opc_inv,
             blank=False,max_length=2,verbose_name=etiquetas4[23]) 
 
-
-    DIAGNOSTICO_OPC=(
-        ('0','Visual'),
-        ('1','Auditivo'),
-        ('2','Kinestesico'),
-        )
-    diagnostico=models.CharField(choices=DIAGNOSTICO_OPC,
-            blank=True,max_length=2)
+    diagnostico_Visual = models.IntegerField(blank=True, default=0)
+    diagnostico_Auditivo = models.IntegerField(blank=True,default=0)
+    diagnostico_Kinestesico = models.IntegerField(blank=True,default=0)
 
     comentarios = JSONField(default={},blank=True)
     def __unicode__(self):

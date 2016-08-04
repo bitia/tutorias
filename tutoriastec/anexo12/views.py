@@ -22,6 +22,7 @@ class Parte1View(View):
             form=form.save()
             form.usuario=usuario
             form.save()
+            
             resultado= diagnostico(form)
             form.diagnostico=str(resultado)
             form.save(update_fields=["diagnostico"])
@@ -40,7 +41,6 @@ def diagnostico(formulario):
     cont3=0
     cont4=0 
 
-#   formp=removercampos(formulario,"_usuario_cache","comentarios","diagnostico","created","usuario_id","id","modified")
     form=formulario.__dict__
     for p,v in form.items():
         if (p=="_usuario_cache" or p=="comentarios" or p=="diagnostico" or p=="created" or p=="usuario_id" or p=="id" or p=="modified"):
@@ -57,13 +57,6 @@ def diagnostico(formulario):
     tupla=(cont1,cont2,cont3,cont4)
     resultado=max(tupla)
     return resultado
-
-
-def removercampos(anexo ,*args):
-    form=anexo.__dict__
-    for c, campo in enumerate(args):
-        form.pop(campo)
-    return form
-
+    
 def gracias(request):
     return render(request,"anexos/gracias.html", {"mensaje":"gracias por llenar el test de asertividad"})
