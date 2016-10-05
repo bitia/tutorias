@@ -42,11 +42,22 @@
       $(function() {
       $( "#id_fecha_nacimiento" ).datepicker({
         changeMonth: true,
-        changeYear: true
+        changeYear: true,
+        maxDate :"-15y",
+        minDate : new Date(1970,1,1),
+        monthNamesShort : ["Ene","feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"],
+        altFormat: "dd-mm-yy",
+        dateFormat : "yy-mm-dd"
       });
     });
-      $('#id_trabajas_horario_inicio').timepicker({ 'scrollDefault': 'now' });
-      $('#id_trabajas_horario_salida').timepicker({ 'scrollDefault': 'now' });
+      $('#id_trabajas_horario_inicio').timepicker({
+        'scrollDefault': 'now',
+        timeFormat: "H:i:s" 
+      });
+      $('#id_trabajas_horario_salida').timepicker({ 
+        'scrollDefault': 'now',
+       timeFormat: "H:i:s" 
+       });
   </script>
 
 {% endblock scriptjs %}

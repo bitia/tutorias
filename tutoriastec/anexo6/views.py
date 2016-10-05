@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .forms import DatosPersonalesForm, DatosGeneralesForm
 from .models import DatosPersonales , DatosGenerales
 from  django.views.generic  import  View
+from  django.http  import  HttpResponseRedirect
+from django.utils import timezone
 
 class Anexo6View(View):
     form_class=DatosPersonalesForm
@@ -15,8 +17,13 @@ class Anexo6View(View):
         return render(request, self.template_name, {'form': form,'form2': form2})
     def post(self, request):
         form = self.form_class(request.POST)
-        form2 = self.form_class(request.POST)
+        form2 = self.form_class2(request.POST)
         usuario=request.user
+        form.fecha= timezone.now()
+       
+        #print form2.trabajas_horario_inicio
+        #print form2.trabajas_horario_salida
+        #print form2.fecha_nacimiento
         if form.is_valid() and form2.is_valid():
             form=form.save()
             form2=form2.save()
@@ -27,6 +34,7 @@ class Anexo6View(View):
             return HttpResponseRedirect("/anexo13/gracias/")
         else:
             self.errores.append(form.errors)
+            self.errores.append(form2.errors)
             print ("No es valido el formulario")
             print(self.errores)
             return render(request, self.template_name, {'form': form})

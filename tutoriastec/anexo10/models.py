@@ -14,4 +14,3 @@ class Foda(UsuarioModelo):
       
     def __unicode__(self):
         return "%s "% (self.usuario.username)
-

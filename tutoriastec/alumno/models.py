@@ -17,3 +17,4 @@ class AlumnoUser(User):
 
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
+    

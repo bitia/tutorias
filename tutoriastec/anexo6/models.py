@@ -28,8 +28,7 @@ class DatosPersonales(UsuarioModelo):
 #		('12',"12"),
 #		)
 #	semestre = models.CharField(choices=semestre_opc, max_length=50, default="1")
-	fecha = models.DateField()
-
+    ##la fecha creada esta en el usuario en create
 class DatosGenerales(UsuarioModelo):
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
@@ -42,11 +41,13 @@ class DatosGenerales(UsuarioModelo):
 	sexo = models.CharField(choices=sexo_opc,max_length=50)
 	correo = models.EmailField()
 
-	telefono = models.IntegerField()
+	telefono =models.CharField( max_length=50)
 	
-	celular = models.IntegerField()
+	celular = models.CharField( max_length=50)
 
-	fecha_nacimiento = models.DateField()
+
+	fecha_nacimiento = models.DateField(null=True)
+	
 	lugar_nacimiento = models.CharField(max_length=50)
 
 	estado_civil_opc=(
@@ -148,8 +149,9 @@ class DatosGenerales(UsuarioModelo):
 
 	nom_trabajo_padre = models.CharField(max_length=50,default="")
 	nom_trabajo_madre = models.CharField(max_length=50,default="")
-	ContactosEmergencia= JSONField(default={})
-
+	#ContactosEmergencia= JSONField(default={})
+	Contacto_de_Emergencia_nombre = models.CharField(max_length=50)
+	Contacto_de_Emergencia_numero= models.CharField(max_length=50)
 #class ContactosEmergencia (models.Model):
 #	usuario = models.OneToOneField(User,blank=True, null= True, on_delete=models.CASCADE)
 #	nombre = models.CharField(max_length=50)

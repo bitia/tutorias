@@ -51,7 +51,6 @@ class FormatoEntrevista(UsuarioModelo):
 
 	nom_madre = models.CharField(max_length=50)
 	edad_madre = models.IntegerField()
-
 	
 	madre_trabaja=models.CharField(choices=opc_si_no,
 			default='si', max_length=50)
@@ -282,7 +281,6 @@ class CaracteristicasPersonales(UsuarioModelo):
 
 	
 class AreaPsicopedagogica(UsuarioModelo):
-	
 	gustaria_ser = models.CharField(max_length=50,blank=False)
 	ayuda_casa_tareas = models.CharField(max_length=50,blank=False)
 	problemas_intervienen = models.CharField(max_length=50,blank=False)
@@ -305,22 +303,18 @@ class AreaPsicopedagogica(UsuarioModelo):
 	asignatura_bajopromedio_anterior = models.CharField(max_length=50)
 	vienes_tecnologico = models.CharField(max_length=50)
 	motiva_venir_tecnologico = models.TextField()
-
 	promedio_anterior = models.FloatField(
 		validators = [MinValueValidator(0), MaxValueValidator(100)])
-
-
-	asignaturas_reprovadas_opc = (
+	asignaturas_reprobadas_opc = (
 		('si',"Si"),
 		('no',"No"),
 		)
-	asignaturas_reprovadas=models.CharField(choices=asignaturas_reprovadas_opc,
+	asignaturas_reprobadas=models.CharField(choices=asignaturas_reprobadas_opc,
 			default='no',max_length=50)	
-	asig_reprovadas = models.CharField(max_length=50,blank= True)
+	asig_reprobadas = models.CharField(max_length=50,blank= True)
 	comentarios=JSONField(default={})
 
 class PlanDeVida (UsuarioModelo):
-	
 	planes_inmediatos = models.TextField(blank= False)
 	metas_vida = models.TextField(blank= False)
 	#caracteristcaspersonales 
