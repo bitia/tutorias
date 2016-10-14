@@ -33,20 +33,18 @@ class DatosGenerales(UsuarioModelo):
 	apellido_paterno = models.CharField(max_length=50)
 	apellido_materno= models.CharField(max_length=50)
 	nombre = models.CharField( max_length=50)
-
 	sexo_opc=(
 		('m',"Masculino"),
 		('f',"Femenino"),
 		)
-	sexo = models.CharField(choices=sexo_opc,max_length=50)
+	sexo = models.CharField(choices=sexo_opc,max_length=50,blank=False)
 	correo = models.EmailField()
 
-	telefono =models.CharField( max_length=50)
+	telefono =models.CharField( max_length=50,null=True)
 	
-	celular = models.CharField( max_length=50)
+	celular = models.CharField( max_length=50,null=True)
 
-
-	fecha_nacimiento = models.DateField(null=True)
+	fecha_nacimiento = models.DateField(null=False)
 	
 	lugar_nacimiento = models.CharField(max_length=50)
 
@@ -58,7 +56,7 @@ class DatosGenerales(UsuarioModelo):
 	estado_civil=models.CharField(choices=estado_civil_opc,
 			default='soltero', max_length=50)
 
-	numero_hijos = models.IntegerField()
+	numero_hijos = models.IntegerField(null=True)
 
 	domicilio_actual = models.CharField(max_length=50,default="") 
 
@@ -84,15 +82,16 @@ class DatosGenerales(UsuarioModelo):
 		('bachillerato',"Esfuerzo de Bachillerato"),
 		)
 	becado_lugar=models.CharField(choices=becado_lugar_opc,
-			default='federal', max_length=50,blank=True)
+			default='federal', max_length=50,blank=True,null=True)
 
-	becado_institucion = models.CharField(max_length=50,default="")
+	becado_institucion = models.CharField(max_length=50,default="",blank=True)
 
 	con_quien_vives_opc= (
 		('familia',"Familia"),
 		('familia_cercana',"Familia Cercana"),
 		('estudiantes',"Estudiantes"),
-		('solo',"Solo")
+		('solo',"Solo"),
+		('otros',"Otros")
 		)
 	con_quien_vives=models.CharField(choices=con_quien_vives_opc,
 			default='familia', max_length=50)
@@ -104,7 +103,7 @@ class DatosGenerales(UsuarioModelo):
 	trabajas =models.CharField(choices=trabajas_opc,
 			default='no', max_length=50)
 
-	trabajas_donde = models.CharField(max_length=50,default="")
+	trabajas_donde = models.CharField(max_length=50,default="",null=True,blank=True)
 	trabajas_horario_inicio = models.TimeField(blank=True,null=True)
 	trabajas_horario_salida = models.TimeField(blank=True,null=True)
 
@@ -118,7 +117,7 @@ class DatosGenerales(UsuarioModelo):
 		('sinestudio',"Sin estudio")
 		)
 	escolaridad_padre=models.CharField(choices=escolaridad_padre_opc,
-			default='sinestudio', max_length=50)
+			default='sinestudio', max_length=50,blank=True,null=True)
 
 
 	escolaridad_madre_opc = (
@@ -131,7 +130,7 @@ class DatosGenerales(UsuarioModelo):
 		('sinestudio',"Sin estudio")
 		)
 	escolaridad_madre=models.CharField(choices=escolaridad_madre_opc,
-			default='sinestudio', max_length=50)
+			default='sinestudio', max_length=50,blank=True,null=True)
 
 	padre_vive_opc=(
 		('si',"Vive"),
@@ -147,8 +146,8 @@ class DatosGenerales(UsuarioModelo):
 	madre_vive=models.CharField(choices=madre_vive_opc,
 			default='si', max_length=50)
 
-	nom_trabajo_padre = models.CharField(max_length=50,default="")
-	nom_trabajo_madre = models.CharField(max_length=50,default="")
+	nom_trabajo_padre = models.CharField(max_length=50,default="",blank=True,null=True)
+	nom_trabajo_madre = models.CharField(max_length=50,default="",blank=True,null=True)
 	#ContactosEmergencia= JSONField(default={})
 	Contacto_de_Emergencia_nombre = models.CharField(max_length=50)
 	Contacto_de_Emergencia_numero= models.CharField(max_length=50)

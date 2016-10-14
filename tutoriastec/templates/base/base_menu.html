@@ -20,11 +20,13 @@
 						{% endif %}
 
 						{% if user.is_staff%}
+						<li>{{user.username}}</li>
 						<li><a class="menu-texto" href="/admin" title="Admin"> <i class="it-user-tie"></i> Administrador</a></li>
 						<li><a class="menu-texto" href="/log_out" title="Cerrar Sesión"> <i class="it-exit"></i> Cerrar Sesión</a></li>
 						{% endif %}
 
 						{% if not user.is_staff and not user.is_anonymous%}
+						<li>{{user.username}}</li>
 						<li><a class="menu-texto" href="/alumno/perfil" title="Perfil"><i class="it-profile"></i> Perfil</a></li>
             <li>
               <a class="menu-texto" href="/anexos/" title="Anexos"><i class="it-file-text2"></i> Anexos</a>

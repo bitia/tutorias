@@ -5,11 +5,12 @@ from django.contrib.auth import authenticate,logout
 from django.contrib.auth import login as login_auth
 from django.http import HttpResponseRedirect as redirect
 from django.contrib.auth.decorators import login_required
+from anexo6.models import DatosPersonales
 
 # Create your views here.
 @login_required(login_url='/')
 def home(request):
-	return render(request,"home/home.html",{})
+    return render(request,"home/home.html",{})
 
 def inicio(request):
     if request.user.is_authenticated():
@@ -40,14 +41,15 @@ def log_out(request):
     return redirect('/')
 
 def registro(request):
-	f_datos_personales= DatosPersonalesForm()
-	f_datos_generales=DatosGeneralesForm()
-	f_contactos_emergencia=ContactosEmergenciaForm()
-	return render(request,"anexos/anexo6.html",{"nombre":"bitia","Form":f_datos_personales,"Form1":f_datos_generales, "Form2": f_contactos_emergencia})
+    f_datos_personales= DatosPersonalesForm()
+    f_datos_generales=DatosGeneralesForm()
+    f_contactos_emergencia=ContactosEmergenciaForm()
+    return render(request,"anexos/anexo6.html",{"nombre":"bitia","Form":f_datos_personales,"Form1":f_datos_generales, "Form2": f_contactos_emergencia})
 
 def recovery_passwd(request):
-	return render(request,"recovery_passwd.html",{"nombre":"bitia"})
+    return render(request,"recovery_passwd.html",{"nombre":"bitia"})
 
 @login_required(login_url='/')
 def perfil(request):
-	return render(request,"perfil.html",{"nombre":"bitia"})
+    alumno = DatosPersonales.objects.get(usuario=request.user)
+    return render(request,"perfil.html",{"alumno":alumno})

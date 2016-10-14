@@ -19,8 +19,6 @@ class Anexo6View(View):
         form = self.form_class(request.POST)
         form2 = self.form_class2(request.POST)
         usuario=request.user
-        form.fecha= timezone.now()
-       
         #print form2.trabajas_horario_inicio
         #print form2.trabajas_horario_salida
         #print form2.fecha_nacimiento
